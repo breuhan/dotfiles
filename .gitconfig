@@ -1,0 +1,17 @@
+[user]
+    name = Michael Contento
+    email = michaelcontento@gmail.com
+[alias]
+    st = status
+    ca = commit -a --
+    log1 = log --oneline 
+    unstage = reset HEAD --
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[branch]
+    autosetupmerge = true
+[core]
+    autocrlf = false
