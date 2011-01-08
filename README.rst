@@ -1,6 +1,3 @@
-All my config files (aka dotfiles)
-==================================
-
 License
 -------
 
