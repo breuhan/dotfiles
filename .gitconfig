@@ -1,12 +1,13 @@
 [user]
-    name = Michael Contento
-    email = michaelcontento@gmail.com
+	name = Michael Contento
+	email = michaelcontento@gmail.com
 [alias]
     st = status -sb
     cma = commit -a -m
     cm = commit -m 
-    log1 = log --oneline --decorate 
+    lg = log --graph --pretty=format:'%C(red)%h %C(bold blue)<%an> %C(green)(%cd)%C(reset) %s%C(yellow)%d%Creset' --abbrev-commit --date=relative -- 
     unstage = reset HEAD --
+    who = shortlog -s --
 [color]
     branch = auto
     diff = auto
