@@ -1,3 +1,4 @@
 /.vim
 /.ssh/known_hosts
+/.ssh/id_dsa
 .DS_Store
