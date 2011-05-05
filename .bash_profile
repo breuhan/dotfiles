@@ -1,5 +1,10 @@
+# Git installed via official installer
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
+fi
+# Git installed via MacPorts
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+    . /usr/local/git/contrib/completion/git-completion.bash 
 fi
 
 alias ll='ls -lGgh'
@@ -13,6 +18,5 @@ else
     PS1='\[\033[01;32m\][$(date +%H:%M)]\[\033[34m\] \w\[\033[31m\]$(__git_ps1 " (%s)") \[\033[34m\]\$\[\033[01;00m\] '
 fi
 
-# MacPorts Installer addition on 2010-08-27_at_21:42:16: adding an appropriate PATH variable for use with MacPorts.
+# MacPorts Installer addition
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
