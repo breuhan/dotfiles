@@ -1,11 +1,12 @@
 [user]
-	name = Michael Contento
-	email = michaelcontento@gmail.com
+    name = Michael Contento
+    email = michaelcontento@gmail.com
 [alias]
-    st = status -sb
-    cma = commit -a -m
     cm = commit -m 
+    cma = commit -a -m
     lg = log --graph --pretty=format:'%C(red)%h %C(bold blue)<%an> %C(green)(%cd)%C(reset) %s%C(yellow)%d%Creset' --abbrev-commit --date=relative -- 
+    pl = pull --rebase
+    st = status -sb
     unstage = reset HEAD --
     who = shortlog -s --
 [color]
@@ -18,18 +19,18 @@
 [core]
     autocrlf = false
 [push]
-	default = tracking
+    default = tracking
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-  insteadOf = "github:"
+    insteadOf = "github:"
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-  insteadOf = "gist:"
+    insteadOf = "gist:"
 [url "git@heroku.com:"]
-  insteadOf = "heroku:"
+    insteadOf = "heroku:"
