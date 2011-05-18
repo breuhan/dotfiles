@@ -8,7 +8,7 @@
     pl = pull --rebase
     st = status -sb
     unstage = reset HEAD --
-    who = shortlog -s --
+    who = !git shortlog -s | sort -r
 [color]
     branch = auto
     diff = auto
