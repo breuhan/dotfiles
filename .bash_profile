@@ -7,6 +7,14 @@ if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
     . /usr/local/git/contrib/completion/git-completion.bash 
 fi
 
+function cd {
+    builtin cd $1
+    echo $PWD > ~/.bash_pwd
+}
+if [ -f ~/.bash_pwd ]; then
+    cd $(cat ~/.bash_pwd)
+fi
+
 alias ll='ls -lGgh'
 alias lla='ls -lGagh'
 alias ..='cd ..'
