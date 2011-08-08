@@ -12,7 +12,7 @@ if [ -f ~/.rvm/scripts/rvm ]; then
 fi
 
 function cd {
-    builtin cd $1
+    builtin cd "$@" 
     echo $PWD > ~/.bash_pwd
 }
 if [ -f ~/.bash_pwd ]; then
