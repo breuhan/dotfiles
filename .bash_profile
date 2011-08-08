@@ -6,6 +6,10 @@ fi
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
     . /usr/local/git/contrib/completion/git-completion.bash 
 fi
+# Load RVM 
+if [ -f ~/.rvm/scripts/rvm ]; then
+    source ~/.rvm/scripts/rvm
+fi
 
 function cd {
     builtin cd $1
