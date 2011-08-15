@@ -34,6 +34,9 @@
     insteadOf = "gist:"
 [url "git@heroku.com:"]
     insteadOf = "heroku:"
+[gitflow "branch"]
+    master = master
+    develop = develop
 [gitflow "prefix"]
     feature = feature/
     release = release/
