@@ -15,6 +15,18 @@ if [ -f ~/.git-flow-completion.sh ]; then
     source ~/.git-flow-completion.sh
 fi
 
+# cleanup history a bit, make it so that we can share
+# a common history between concurrent sessions
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000000 HISTFILESIZE=1000000
+shopt -s histappend
+
+if [ -n "$PROMPT_COMMAND" ]; then
+    PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+else
+    PROMPT_COMMAND='history -a'
+fi
+
 function cd {
     builtin cd "$@" 
     echo $PWD > ~/.bash_pwd
