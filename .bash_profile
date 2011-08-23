@@ -54,3 +54,6 @@ if [ "$(id -u)" == "0" ]; then
 else
     PS1='\[\033[32m\][$(date +%H:%M)]\[\033[34m\] \w\[\033[31m\]$(__git_ps1 " (%s)") \[\033[34m\]\$\[\033[00m\] '
 fi
+
+# Add our dotfiles bin folder to the path
+export PATH=~/.bin/:${PATH}
