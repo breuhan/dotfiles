@@ -4,6 +4,7 @@
 #   * Copy all OSX files from Library
 #   * Configure OSX to use the files from Library
 #   * Auto-Decode the ssh key
+#   * Remove .bin and place ack in /usr/local/bin
 
 #
 # Main variables
