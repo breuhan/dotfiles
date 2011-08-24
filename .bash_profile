@@ -19,6 +19,14 @@ if [ -f ~/.git-flow-completion.sh ]; then
 fi
 
 #
+# BASH - SSH COMPLETION
+#
+
+if [ -f ~/.ssh-completion.sh ]; then
+    source ~/.ssh-completion.sh
+fi
+
+#
 # RVM
 #
 
