@@ -14,6 +14,13 @@ toDir=$(pwd)
 fromDir=~/
 
 #
+# Update git submodules
+#
+
+echo "Updating all git submodules"
+git submodule update --init --recursive
+
+#
 # Link all dotfiles from the current directory
 #
 
@@ -41,13 +48,6 @@ for dir in $(ls -a1); do
     rm -rf ${linkFrom}
     ln -s ${linkTo} ${linkFrom}
 done
-
-#
-# Update git submodules
-#
-
-echo "Updating all git submodules"
-git submodule update --init
 
 #
 # Install: git-flow-completion
