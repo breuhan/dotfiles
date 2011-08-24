@@ -7,11 +7,11 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 if [ -f /opt/local/etc/bash_completion ]; then
     # Installed via MacPorts
-    . /opt/local/etc/bash_completion
+    source /opt/local/etc/bash_completion
 fi
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
     # Installed via official installer
-    . /usr/local/git/contrib/completion/git-completion.bash 
+    source /usr/local/git/contrib/completion/git-completion.bash 
 fi
 
 if [ -f ~/.git-flow-completion.sh ]; then
