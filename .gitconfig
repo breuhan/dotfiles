@@ -18,9 +18,9 @@
 [branch]
     autosetupmerge = true
 [core]
+	excludesfile = ~/.gitignore
     autocrlf = false
     editor = /usr/bin/vim
-	excludesfile = /Volumes/Data/Users/michaelcontento/.gitignore
 [push]
     default = tracking
 [url "git@github.com:"]
