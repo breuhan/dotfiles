@@ -35,6 +35,14 @@ if [ -f ~/.rvm/scripts/rvm ]; then
 fi
 
 #
+# EC2
+#
+
+if [ -f ~/.ec2/environment ]; then
+    source ~/.ec2/environment
+fi
+
+#
 # BASH - HISTORY
 #
 
