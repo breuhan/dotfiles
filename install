@@ -5,6 +5,10 @@
 #   * Configure OSX to use the files from Library
 #   * Auto-Decode the ssh key
 #   * Remove .bin and place ack in /usr/local/bin
+#   * Install homebrew
+#   * Install htop, tmux, aespipe
+#   * Change default shell to zsh
+#   * Link oh-my-zsh to ~/.oh-my-zsh
 
 #
 # Main variables
