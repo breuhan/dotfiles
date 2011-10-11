@@ -17,6 +17,8 @@
     status = auto
 [branch]
     autosetupmerge = true
+[merge]
+    summary = true
 [core]
 	excludesfile = ~/.gitignore
     autocrlf = false
