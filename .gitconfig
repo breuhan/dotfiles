@@ -10,6 +10,7 @@
     st = status -sb
     unstage = reset HEAD --
     who = !git shortlog -se | sort -r
+    diffbase = "!f() { REV=$1; shift; git diff $(git merge-base HEAD $REV) $@; }; f"
 [color]
     branch = auto
     diff = auto
