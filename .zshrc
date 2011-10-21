@@ -53,5 +53,8 @@ if [ -f ~/.zsh_pwd ]; then
     cd $(cat ~/.zsh_pwd)
 fi
 
+# Disable autocorrect complete
+unsetopt correct_all
+
 # TODO: Really!? Currently only for ack ...
 export PATH=~/.bin/:${PATH}
