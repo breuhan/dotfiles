@@ -33,8 +33,8 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.rvm/scripts/rvm ]; then
     source ~/.rvm/scripts/rvm
 fi
-if [ -f ~/.ec2/environment ]; then
-    source ~/.ec2/environment
+if [ -f ~/Workspace/adcloud/aws/environment ]; then
+    source ~/Workspace/adcloud/aws/environment
 fi
 
 # TODO: Fix strange locales on OSX
