@@ -37,6 +37,8 @@ if [ -f ~/Workspace/adcloud/aws/environment ]; then
     source ~/Workspace/adcloud/aws/environment
 fi
 
+alias json_pp='python -mjson.tool'
+
 # TODO: Fix strange locales on OSX
 export LC_ALL=en_US.UTF-8 
 
