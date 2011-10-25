@@ -2,14 +2,14 @@
     name = Michael Contento
     email = michaelcontento@gmail.com
 [alias]
-    cm = commit -m 
-    cma = commit -a -m
+    cm = commit --message 
+    cma = commit --all --message
     co = checkout
-    logg = log --left-right --graph 
+    logg = log --left-right --graph  
+    st = status --short --branch
     pl = pull --rebase
-    st = status -sb
     unstage = reset HEAD --
-    who = !git shortlog -se | sort -r
+    who = !git shortlog --summary --email | sort -r
 [log]
     abbrevCommit = true
     date = relative
