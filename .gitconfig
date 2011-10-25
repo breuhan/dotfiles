@@ -54,3 +54,8 @@
     hotfix = hotfix/
     support = support/
     versiontag = RELEASE_
+[github]
+    token = 
+    user = michaelcontento
+[filter "github_token"]
+    clean = perl -pe \"s/token? =.*/token = 
