@@ -30,8 +30,6 @@
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
-[push]
-    default = tracking
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
