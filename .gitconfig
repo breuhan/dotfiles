@@ -28,7 +28,7 @@
 [merge]
     summary = true
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitexcludes
     autocrlf = false
 [push]
     default = tracking
