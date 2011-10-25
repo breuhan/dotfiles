@@ -26,7 +26,7 @@
     autosetupmerge = true
     autosetuprebase = always
 [merge]
-    summary = true
+    stat = true
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
