@@ -7,7 +7,6 @@
     co = checkout
     logg = log --left-right --graph  
     st = status --short --branch
-    pl = pull --rebase
     unstage = reset HEAD --
     who = !git shortlog --summary --email | sort -r
 [log]
@@ -25,6 +24,7 @@
     status = auto
 [branch]
     autosetupmerge = true
+    autosetuprebase = always
 [merge]
     summary = true
 [core]
