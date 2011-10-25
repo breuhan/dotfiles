@@ -5,7 +5,7 @@
     cm = commit -m 
     cma = commit -a -m
     co = checkout
-    lg = log --left-right --graph 
+    logg = log --left-right --graph 
     pl = pull --rebase
     st = status -sb
     unstage = reset HEAD --
