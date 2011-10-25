@@ -5,11 +5,19 @@
     cm = commit -m 
     cma = commit -a -m
     co = checkout
-    lg = log --left-right --graph --pretty=format:'%C(red)%h %C(bold blue)<%an> %C(green)(%cd)%C(reset) %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+    lg = log --left-right --graph 
     pl = pull --rebase
     st = status -sb
     unstage = reset HEAD --
     who = !git shortlog -se | sort -r
+[log]
+    abbrevCommit = true
+    date = relative
+[format]
+    pretty = default 
+[pretty]
+    changelog = * %s
+    default = %C(red)%h %C(bold blue)<%an> %C(green)(%cd)%C(reset) %s%C(yellow)%d%Creset
 [color]
     branch = auto
     diff = auto
