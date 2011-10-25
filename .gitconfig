@@ -30,6 +30,7 @@
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
+    whitespace = tab-in-indent,trailing-space,cr-at-eol
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
