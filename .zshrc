@@ -39,6 +39,13 @@ if [ -f ~/Workspace/adcloud/aws/environment ]; then
     source ~/Workspace/adcloud/aws/environment
 fi
 
+function scm_update {
+    for dir in $(find . -type d -maxdepth 1 -not -wholename '.'); do 
+        echo ">> Checking $dir"
+        (cd $dir && git pull)
+    done
+}
+
 alias json_pp='python -mjson.tool'
 
 # TODO: Fix strange locales on OSX
