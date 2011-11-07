@@ -46,6 +46,13 @@ function scm_update {
     done
 }
 
+function terminate_vm {
+    VBoxManage list vms \
+        | grep $(basename $(pwd)) \
+        | cut -d' ' -f1 \
+        | xargs -I '{}' VBoxManage controlvm '{}' poweroff 2> /dev/null
+}
+
 alias json_pp='python -mjson.tool'
 
 # TODO: Fix strange locales on OSX
