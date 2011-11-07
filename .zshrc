@@ -59,8 +59,8 @@ alias json_pp='python -mjson.tool'
 export LC_ALL=en_US.UTF-8 
 
 # TODO: Fix strange vim exit code error ...
-alias vim='/usr/bin/vim'
-export EDITOR='/usr/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
+export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
 
 # TODO: Move this into own zsh-plugin
 function cd {
