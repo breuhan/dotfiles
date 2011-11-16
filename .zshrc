@@ -42,7 +42,7 @@ fi
 function scm_update {
     for dir in $(find . -type d -maxdepth 1 -not -wholename '.'); do 
         echo ">> Checking $dir"
-        (cd $dir && git pull)
+        (cd $dir && git pull --all)
     done
 }
 
