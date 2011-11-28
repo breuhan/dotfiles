@@ -35,6 +35,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.rvm/scripts/rvm ]; then
     source ~/.rvm/scripts/rvm
 fi
+
 if [ -f ~/Workspace/adcloud/aws/environment ]; then
     source ~/Workspace/adcloud/aws/environment
 fi
@@ -53,8 +54,6 @@ function terminate_vm {
         | xargs -I '{}' VBoxManage controlvm '{}' poweroff 2> /dev/null
 }
 
-alias json_pp='python -mjson.tool'
-
 # TODO: Fix strange locales on OSX
 export LC_ALL=en_US.UTF-8 
 
@@ -70,6 +69,10 @@ function cd {
 if [ -f ~/.zsh_pwd ]; then
     cd $(cat ~/.zsh_pwd)
 fi
+
+alias l='ls -lh'
+alias la='l -A'
+alias json_pp='python -mjson.tool'
 
 # Disable autocorrect complete
 unsetopt correct_all
