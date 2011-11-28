@@ -16,7 +16,7 @@
     pretty = default 
 [pretty]
     changelog = * %s
-    default = %C(red)%h %C(bold blue)<%an> %C(green)(%cd)%C(reset) %s%C(yellow)%d%Creset
+    default = %C(yellow)%h %C(green)%ar %C(reset)| %s %C(blue)[%an]%C(white)%d %C(reset) 
 [color]
     branch = auto
     diff = auto
