@@ -23,7 +23,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(npm git bundler git-flow github knife osx rvm vagrant)
+plugins=(npm bundler git-flow osx vagrant fabric gem pip redis-cli rbenv python nyan gnu-utils extract)
 
 source $ZSH/oh-my-zsh.sh
 
