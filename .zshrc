@@ -59,16 +59,17 @@ alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
 export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
 
 # TODO: Move this into own zsh-plugin
-function cd {
-    builtin cd "$@" 
-    echo $PWD > ~/.zsh_pwd
+function cd() {
+    builtin cd "$@";
+    echo "$PWD" >! ~/.zsh_cwd;
 }
-if [ -f ~/.zsh_pwd ]; then
-    cd $(cat ~/.zsh_pwd)
-fi
+export cd
+
+alias cwd='cd "$(cat ~/.zsh_cwd)"'
+cwd
 
 alias l='ls -lh'
-alias la='l -A'
+alias la='ls -lhA'
 alias json_pp='python -mjson.tool'
 
 # Disable autocorrect complete
