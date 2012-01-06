@@ -337,7 +337,7 @@
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
-	<true/>
+	<false/>
 	<key>LeftCommand</key>
 	<integer>7</integer>
 	<key>LeftOption</key>
@@ -372,7 +372,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>50 272 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1042 280 570 451 0 0 1920 1058 </string>
+	<string>651 144 990 706 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>275 101 990 706 0 0 1920 1058 </string>
 	<key>NeverWarnAboutOverrides</key>
@@ -1160,7 +1160,7 @@
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>WindowNumber</key>
-	<true/>
+	<false/>
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
