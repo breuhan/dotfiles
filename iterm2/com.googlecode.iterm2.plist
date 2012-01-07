@@ -745,7 +745,7 @@
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
-					<string>[1;2D</string>
+					<string>l</string>
 				</dict>
 				<key>0xf702-0x240000</key>
 				<dict>
@@ -780,7 +780,7 @@
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
-					<string>[1;2C</string>
+					<string>r</string>
 				</dict>
 				<key>0xf703-0x240000</key>
 				<dict>
