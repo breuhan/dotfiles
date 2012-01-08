@@ -1,3 +1,5 @@
 /.ssh/id_dsa
 /.ssh/id_rsa
 /.ssh/known_hosts
+/.vim/bundle
+!/.vim/bundle/vundle
