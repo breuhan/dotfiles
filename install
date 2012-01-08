@@ -1,22 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO:
-#   * Copy all OSX files from Library
-#   * Configure OSX to use the files from Library
-#   * Auto-Decode the ssh key
-#   * Remove .bin and place ack in /usr/local/bin
-#   * Install homebrew
-#   * Install htop, tmux, aespipe
-#   * Change default shell to zsh
-#   * Link oh-my-zsh to ~/.oh-my-zsh
-
-#
-# Main variables
-#
-
-toDir=$(pwd)
-fromDir=~/
-
 #
 # Update git submodules
 #
@@ -28,14 +11,20 @@ git submodule update --init --recursive
 # Link all dotfiles from the current directory
 #
 
+toDir=$(pwd)
+fromDir=~/
+
 for dir in $(ls -a1); do
     # Skip "." and ".."
     if [ "${dir}" == "." ] || [ "${dir}" == ".." ]; then
         continue
     fi
 
-    # Skip the .git folder
-    if [ "${dir}" == ".git" ]; then
+    # Skip some git files that are specific to this repository
+    if [ "${dir}" == ".git" ] \
+    || [ "${dir}" == ".gitmodules" ] \
+    || [ "${dir}" == ".gitignore" ] \
+    || [ "${dir}" == ".gitattributes" ]; then
         continue
     fi
 
@@ -52,22 +41,3 @@ for dir in $(ls -a1); do
     rm -rf ${linkFrom}
     ln -s ${linkTo} ${linkFrom}
 done
-
-#
-# Install: git-flow-completion
-#
-
-echo "Creating symlink for: git-flow-completion"
-
-gitFlowFrom="${fromDir}/.git-flow-completion.sh"
-gitFlowTo="${toDir}/git-flow-completion/git-flow-completion.bash"
-
-rm -rf ${gitFlowFrom}
-ln -s ${gitFlowTo} ${gitFlowFrom}
-
-#
-# Install: rvm
-#
-echo "Install or update rvm"
-bash < <(curl -s https://rvm.beginrescueend.com/install/rvm) &> /dev/null
-rvm reload &> /dev/null
