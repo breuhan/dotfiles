@@ -1,0 +1,34 @@
+# [dotfiles][]
+
+## About
+
+All my personal configuration files for various unix tools. Only my vim
+configuration is stored in a separate repository called [dotvim][].
+
+## Getting started
+
+    $ git clone git://github.com/michaelcontento/dotfiles.git
+    $ cd dotfiles
+    $ ./install
+
+Now everything should be linked into your home folder and be ready to use. Just
+install the tools itself (e.g. tmux) and start working.
+
+## License
+
+    Copyright 2009-2012 Michael Contento <michaelcontento@gmail.com>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+  [dotfiles]: https://github.com/michaelcontento/dotfiles
+  [dotvim]: https://github.com/michaelcontento/dotvim
