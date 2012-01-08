@@ -2,8 +2,7 @@
 
 ## About
 
-All my personal configuration files for various unix tools. Only my vim
-configuration is stored in a separate repository called [dotvim][].
+All my personal configuration files for various unix tools.
 
 ## Getting started
 
@@ -31,4 +30,3 @@ install the tools itself (e.g. tmux) and start working.
     limitations under the License.
 
   [dotfiles]: https://github.com/michaelcontento/dotfiles
-  [dotvim]: https://github.com/michaelcontento/dotvim
