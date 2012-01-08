@@ -4,12 +4,14 @@
 # Update git submodules
 #
 
-echo "Updating all git submodules"
+echo ">> Updating all git submodules"
 git submodule update --init --recursive
 
 #
 # Link all dotfiles from the current directory
 #
+
+echo ">> Creating all symlinks"
 
 toDir=$(pwd)
 fromDir=~/
@@ -54,3 +56,38 @@ if [ -e "${fromDir}" ]; then
     rm -rf "${fromDir}/${layoutFile}"
     ln -s "${toDir}/${layoutFile}" "${fromDir}/${layoutFile}"
 fi
+
+#
+# Install all required gems if possible
+#
+
+echo ">> Install required gems (e.g. for some vim plugins)"
+
+type bundle > /dev/null
+bundleInstalled=$?
+
+type gem > /dev/null
+gemsInstalled=$?
+
+if [ ! $bundleInstalled ] && [ ! $gemsInstalled ]; then
+    echo "!! Bundler AND gems missing"
+    echo "!! Please install at least gems and run this script again."
+    exit 1
+fi
+
+if [ ! $bundleInstalled ]; then
+    echo "!! Bundler is missing .. i'll now try to install bundler for you"
+    gem install bundler
+
+    if [ $? -ne 0 ]; then
+        echo "!! Something went wrong"
+        exit 1
+    fi
+fi
+
+bundle
+
+#
+# Done! :D
+#
+echo ">> Done"
