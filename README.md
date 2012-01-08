@@ -13,6 +13,13 @@ All my personal configuration files for various unix tools.
 Now everything should be linked into your home folder and be ready to use. Just
 install the tools itself (e.g. tmux) and start working.
 
+## Extra step for [Vim][]
+
+Because all [Vim][] plugins are managed with [Vundle][] you have to start 
+[Vim][], ignore all errors and just hit `<Leader>bi` (hint: `<Leader>=,`). This 
+will trigger the install method inside [Vundle][] and after a few seconds you 
+can restart [Vim][] and all those nasty errors should be gone. 
+
 ## License
 
     Copyright 2009-2012 Michael Contento <michaelcontento@gmail.com>
@@ -29,4 +36,6 @@ install the tools itself (e.g. tmux) and start working.
     See the License for the specific language governing permissions and
     limitations under the License.
 
+  [Vim]: http://www.vim.org
+  [Vundle]: https://github.com/gmarik/vundle
   [dotfiles]: https://github.com/michaelcontento/dotfiles
