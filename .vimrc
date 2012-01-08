@@ -266,3 +266,14 @@ nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
+
+" Tabular
+Bundle 'godlygeek/tabular'
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
+nmap <Leader>t, :Tabularize /,\zs<CR>
+vmap <Leader>t, :Tabularize /,\zs<CR>
+nmap <Leader>t> :Tabularize /=>\zs<CR>
+vmap <Leader>t> :Tabularize /=>\zs<CR>
