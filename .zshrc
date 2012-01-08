@@ -74,6 +74,3 @@ alias json_pp='python -mjson.tool'
 
 # Disable autocorrect complete
 unsetopt correct_all
-
-# TODO: Really!? Currently only for ack ...
-export PATH=~/.bin/:${PATH}
