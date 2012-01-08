@@ -38,6 +38,19 @@ for dir in $(ls -a1); do
     linkFrom="${fromDir}/${dir}"
     linkTo="${toDir}/${dir}"
 
-    rm -rf ${linkFrom}
-    ln -s ${linkTo} ${linkFrom}
+    rm -rf "${linkFrom}"
+    ln -s "${linkTo}" "${linkFrom}"
 done
+
+#
+# Link the keyboard layout under OSX
+#
+
+fromDir=~/Library/Keyboard\ Layouts/
+layoutFile=$(ls -1 *.keylayout)
+
+if [ -e "${fromDir}" ]; then
+    echo "Creating symlink for: ${layoutFile}"
+    rm -rf "${fromDir}/${layoutFile}"
+    ln -s "${toDir}/${layoutFile}" "${fromDir}/${layoutFile}"
+fi
