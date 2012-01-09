@@ -51,13 +51,6 @@ function terminate_vm {
         | xargs -I '{}' VBoxManage controlvm '{}' poweroff 2> /dev/null
 }
 
-# TODO: Fix strange locales on OSX
-export LC_ALL=en_US.UTF-8 
-
-# TODO: Fix strange vim exit code error ...
-alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
-export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
-
 # TODO: Move this into own zsh-plugin
 function cd() {
     builtin cd "$@";
