@@ -251,6 +251,7 @@ nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 nmap <leader>y :FufFileWithCurrentBufferDir<CR>
+nmap <leader>u :FufTaggedFile<CR>
 
 " Make TComment accessible
 Bundle 'tomtom/tcomment_vim'
