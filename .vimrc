@@ -5,15 +5,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Taglist
-Bundle 'taglist.vim'
-map <Leader>h :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
-let Tlist_Inc_Winwidth = 0
-let Tlist_WinWidth = 45
-let Tlist_GainFocus_On_ToggleOpen= 1
-let Tlist_Show_One_File = 1
-
 " Used theme
 Bundle 'altercation/vim-colors-solarized'
 
@@ -286,3 +277,12 @@ nmap <Leader>t, :Tabularize /,\zs<CR>
 vmap <Leader>t, :Tabularize /,\zs<CR>
 nmap <Leader>t> :Tabularize /=>\zs<CR>
 vmap <Leader>t> :Tabularize /=>\zs<CR>
+
+" Taglist
+Bundle 'taglist.vim'
+map <Leader>h :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_WinWidth = 45
+let Tlist_GainFocus_On_ToggleOpen= 1
+let Tlist_Show_One_File = 1
