@@ -8,7 +8,7 @@ GEM
     github-markup (0.7.0)
     org-ruby (0.6.0)
       rubypants (>= 0.2.0)
-    redcarpet (2.0.1)
+    redcarpet (2.1.0)
     rubypants (0.2.0)
     wikicloth (0.7.1)
       builder
