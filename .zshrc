@@ -29,6 +29,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 if [ -f ~/.rvm/scripts/rvm ]; then
     source ~/.rvm/scripts/rvm
 fi
