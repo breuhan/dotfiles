@@ -514,7 +514,7 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>427 356 214 309 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>844 295 924 485 0 0 1920 1058 </string>
+	<string>955 403 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 474 592 584 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -853,7 +853,7 @@
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
-					<string>[D</string>
+					<string>[1;2D</string>
 				</dict>
 				<key>0xf702-0x240000</key>
 				<dict>
@@ -881,7 +881,7 @@
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
-					<string>[C</string>
+					<string>[1;2C</string>
 				</dict>
 				<key>0xf703-0x240000</key>
 				<dict>
