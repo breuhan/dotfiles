@@ -33,10 +33,6 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/.rvm/scripts/rvm ]; then
-    source ~/.rvm/scripts/rvm
-fi
-
 if [ -f ~/Workspace/adcloud/aws/environment ]; then
     source ~/Workspace/adcloud/aws/environment
 fi
