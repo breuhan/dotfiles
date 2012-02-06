@@ -176,9 +176,9 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 
 " Mac bindings for home/end
-imap <C-a> <Esc>0i
+imap <C-a> <Esc>^i
 imap <C-e> <Esc>g$i
-map <C-a> 0
+map <C-a> ^
 map <C-e> g$
 
 " Introduct new keycodes to vim for <alt-arrows>
