@@ -182,11 +182,11 @@ map <C-a> ^
 map <C-e> g$
 
 " Introduct new keycodes to vim for <alt-arrows>
-set <F13>=f
+set <F13>=[1;3C
 map <F13> <M-Right>
 map! <F13> <M-Right>
 
-set <F14>=b
+set <F14>=[1;3D
 map <F14> <M-Left>
 map! <F14> <M-Left>
 
