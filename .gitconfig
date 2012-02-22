@@ -27,10 +27,12 @@
     autosetuprebase = always
 [merge]
     stat = true
+	tool = vimdiff
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
     whitespace = tab-in-indent,trailing-space,cr-at-eol
+	editor = /usr/bin/vim
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
