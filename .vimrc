@@ -15,6 +15,9 @@ Bundle 'SearchComplete'
 Bundle 'ervandew/supertab'
 Bundle 'sickill/vim-pasta'
 
+" PHP manual lookup
+Bundle 'michaelcontento/php-search-doc'
+
 " Automatically reload changes if detected
 set autoread
 
