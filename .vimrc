@@ -293,3 +293,10 @@ let Tlist_WinWidth = 45
 let Tlist_GainFocus_On_ToggleOpen= 1
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
+
+" Syntax checking magic
+Bundle 'scrooloose/syntastic'
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
+map <Leader>sc :SyntasticCheck<CR>
