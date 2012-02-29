@@ -37,12 +37,12 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/.rvm/scripts/rvm ]; then
-    source ~/.rvm/scripts/rvm
+if [ -f $HOME/.rvm/scripts/rvm ]; then
+    source $HOME/.rvm/scripts/rvm
 fi
 
-if [ -f ~/Workspace/adcloud/aws/environment ]; then
-    source ~/Workspace/adcloud/aws/environment
+if [ -f $HOME/Workspace/adcloud/aws/environment ]; then
+    source $HOME/Workspace/adcloud/aws/environment
 fi
 
 function scm_update {
@@ -74,12 +74,12 @@ function terminate_vm {
 # TODO: Move this into own zsh-plugin
 function cd() {
     builtin cd "$@";
-    echo "$PWD" >! ~/.zsh_cwd;
+    echo "$PWD" >! $HOME/.zsh_cwd;
 }
 export cd
 
-alias cwd='cd "$(cat ~/.zsh_cwd)"'
-if [ -e ~/.zsh_cwd ]; then
+alias cwd='cd "$(cat $HOME/.zsh_cwd)"'
+if [ -e $HOME/.zsh_cwd ]; then
     cwd
 fi
 
