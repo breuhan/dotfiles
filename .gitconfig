@@ -19,6 +19,8 @@
     diff = auto
     interactive = auto
     status = auto
+[chiefs]
+    ignore = (master|stable|production|stage)
 [branch]
     autosetupmerge = true
     autosetuprebase = always
