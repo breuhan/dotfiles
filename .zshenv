@@ -2,6 +2,8 @@
 export LC_ALL=en_US.UTF-8 
 
 # Update path to find all tools installed via homebrew
-for dir in $(find /usr/local/Cellar -name 'bin'); do
-    export PATH="$dir:$PATH"
-done
+if [ -d /usr/locales/Cellar ]; then
+    for dir in $(find /usr/local/Cellar -name 'bin'); do
+        export PATH="$dir:$PATH"
+    done
+fi
