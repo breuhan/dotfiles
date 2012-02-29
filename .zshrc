@@ -79,7 +79,9 @@ function cd() {
 export cd
 
 alias cwd='cd "$(cat ~/.zsh_cwd)"'
-cwd
+if [ -e ~/.zsh_cwd ]; then
+    cwd
+fi
 
 alias l='ls -lh'
 alias la='ls -lhA'
