@@ -35,8 +35,6 @@ for dir in $(ls -a1); do
         continue
     fi
 
-    echo "Creating symlink for: ${dir}"
-
     linkFrom="${fromDir}/${dir}"
     linkTo="${toDir}/${dir}"
 
