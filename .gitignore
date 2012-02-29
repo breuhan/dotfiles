@@ -1,6 +1,18 @@
+*.pyc
+
+# We're useing Vagrant only for local tests
+/.vagrant
+/Vagrantfile
+
+# Rapid development revolver symlink
+/revolver
+
+# Keep some ssh stuff secret
 /.ssh/id_dsa
 /.ssh/id_rsa
 /.ssh/known_hosts
 /.ssh/authorized_keys
+
+# Ignore all vundle bundles except vundle itself
 /.vim/bundle
 !/.vim/bundle/vundle
