@@ -14,11 +14,7 @@ git submodule update --init --recursive
 echo ">> Creating all symlinks"
 
 toDir=$(pwd)
-if [ "$1" != "" ]; then
-    fromDir=$1
-else
-    fromDir="~/"
-fi
+fromDir=$HOME
 
 for dir in $(ls -a1); do
     # Skip "." and ".."
