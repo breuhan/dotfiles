@@ -58,6 +58,11 @@ if [ -e "${fromDir}" ]; then
 fi
 
 #
+# Install vim plugins
+#
+vim -e -c BundleInstall -c quitall > /dev/null
+
+#
 # Install all required gems if possible
 #
 
