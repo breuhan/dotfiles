@@ -9,11 +9,8 @@
     st = status --short --branch
     unstage = reset HEAD --
     who = !git shortlog --summary --email | sort -r
-    lg = log --pretty=history --graph
+    lg = log --pretty=history --abbrev --date=relative --graph
     ff = pull --ff-only
-[log]
-    abbrevCommit = true
-    date = relative
 [pretty]
     changelog = * %s
     history = %C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)
