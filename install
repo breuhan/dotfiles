@@ -73,20 +73,9 @@ bundleInstalled=$?
 type gem > /dev/null
 gemsInstalled=$?
 
-if [ ! $bundleInstalled ] && [ ! $gemsInstalled ]; then
-    echo "!! Bundler AND gems missing"
-    echo "!! Please install at least gems and run this script again."
+if [ ! $bundleInstalled ] || [ ! $gemsInstalled ]; then
+    echo "!! Bundler OR gems missing"
     exit 1
-fi
-
-if [ ! $bundleInstalled ]; then
-    echo "!! Bundler is missing .. i'll now try to install bundler for you"
-    gem install bundler
-
-    if [ $? -ne 0 ]; then
-        echo "!! Something went wrong"
-        exit 1
-    fi
 fi
 
 bundle
