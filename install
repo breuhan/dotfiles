@@ -3,14 +3,12 @@
 #
 # Update git submodules
 #
-
 echo ">> Updating all git submodules"
 git submodule update --init --recursive
 
 #
 # Link all dotfiles from the current directory
 #
-
 echo ">> Creating all symlinks"
 
 toDir=$(pwd)
@@ -45,11 +43,12 @@ done
 #
 # Link the keyboard layout under OSX
 #
-
 fromDir=~/Library/Keyboard\ Layouts/
 layoutFile=$(ls -1 *.keylayout)
 
 if [ -e "${fromDir}" ]; then
+    echo ">> Installing new OSX keyboard layout"
+
     rm -rf "${fromDir}/${layoutFile}"
     ln -s "${toDir}/${layoutFile}" "${fromDir}/${layoutFile}"
 fi
@@ -58,13 +57,11 @@ fi
 # Install vim plugins
 #
 echo ">> Installing all vim plugins" 
-
 vim -e -c BundleInstall -c quitall > /dev/null
 
 #
 # Install all required gems if possible
 #
-
 echo ">> Install required gems (e.g. for some vim plugins)"
 
 type bundle > /dev/null
@@ -78,7 +75,12 @@ if [ ! $bundleInstalled ] || [ ! $gemsInstalled ]; then
     exit 1
 fi
 
-bundle | grep -v 'Using'
+bundle > /dev/null
+
+if [ $? -ne 0 ]; then
+    echo "!! Something went wrong with bundler"
+    exit 1
+fi
 
 #
 # Done! :D
