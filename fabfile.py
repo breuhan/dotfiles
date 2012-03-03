@@ -8,56 +8,42 @@ from revolver import file
 from revolver import group
 from revolver import package
 from revolver import server
-from revolver import user
 from revolver import service
+from revolver import user
 from revolver.core import env, run, sudo
+from revolver.tool import git_chiefs
+from revolver.tool import git_extras
+from revolver.tool import git_flow
+from revolver.tool import ruby
 from revolver.tool import sudoers
 
+# TODO Fix revolver.vagrant.select to work with "vagrant ssh-config"
 env.hosts = ['vagrant@33.33.33.123']
 
-def _packages_python():
+def _python():
+    # TODO Same API as ruby? Google this topic for current best practice! 
+    #      - Install requested python version system wide
+    #      - Auto-create virtualenv with the right interpreter
+    #      - Auto-workon into the right venv
     package.ensure("python-setuptools")
-    with ctx.sudo():
-        run("easy_install pip")
-        run("pip install virtualenv")
-        run("pip install virtualenvwrapper")
-
-def _packages_editor():
-    package.ensure("exuberant-ctags")
-    package.ensure("vim-nox")
-
-def _packages_network():
-    package.ensure("curl")
-    package.ensure("nmap")
-    package.ensure("rsync")
-    package.ensure("tcpdump")
-    package.ensure("traceroute")
-    package.ensure("wget")
-
-def _packages_core():
-    package.ensure("ack-grep")
-    package.ensure("apt-show-versions")
-    package.ensure("htop")
-    package.ensure("tree")
-
-def _packages_scm():
-    package.ensure("git-core")
-    package.ensure("tig")
-    sudo("curl -s https://raw.github.com/michaelcontento/git-chiefs/master/install | bash")
-    sudo("curl -s https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh | bash")
-    sudo("curl -s https://raw.github.com/visionmedia/git-extras/master/bin/git-extras | INSTALL=y sh")
-
-def _packages_shell():
-    package.ensure("tmux")
-    package.ensure("zsh")
+    sudo("easy_install pip")
+    sudo("pip install virtualenv")
+    sudo("pip install virtualenvwrapper")
 
 def _packages():
     package.update()
-    _packages_core()
-    _packages_editor()
-    _packages_network()
-    _packages_scm()
-    _packages_shell()
+    package.upgrade()
+
+    package.ensure(["exuberant-ctags", "vim-nox"])
+    package.ensure(["curl", "nmap", "rsync", "tcpdump", "traceroute", "wget"])
+    package.ensure(["ack-grep", "apt-show-versions", "iotop", "tree"])
+    package.ensure(["atop", "htop", "iftop", "iotop", "itop", "latencytop", "powertop"])
+    package.ensure(["tmux", "zsh"])
+
+    package.ensure(["git-core", "tig"])
+    git_chiefs.ensure()
+    git_extras.ensure()
+    git_flow.ensure()
 
 def _timezone():
     server.timezone("UTC")
@@ -75,11 +61,8 @@ def _users():
     user.ensure("michael", shell="/bin/zsh")
     group.user_ensure("admin", "michael")
 
-    home = user.home_directory("michael")
-    fake_home = "export HOME=%s" % home
-    path = "export PATH=\"$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH\""
-    with ctx.sudo("michael"), ctx.cd(home), ctx.prefix(fake_home), ctx.prefix(path):
-        _ruby("1.9.3-p125")
+    with ctx.fake_login("michael"), ctx.rbenv():
+        ruby.ensure("1.9.3-p125")
         _dotfiles()
 
 def _dotfiles():
@@ -90,28 +73,6 @@ def _dotfiles():
         run("git pull")
         run("./install")
         file.copy(".ssh/id_rsa.pub", ".ssh/authorized_keys", mode=600)
-
-def _ruby(version):
-    if not dir.exists(".rbenv"):
-        run("git clone git://github.com/sstephenson/rbenv.git .rbenv")
-
-    with ctx.cd(".rbenv"):
-        run("git pull")
-
-        dir.ensure("plugins")
-        with ctx.cd("plugins"):
-            if not dir.exists("ruby-build"):
-                run("git clone git://github.com/sstephenson/ruby-build.git")
-
-            with ctx.cd("ruby-build"):
-                run("git pull")
-
-        if not dir.exists("versions/%s" % version):
-            run("rbenv install %s" % version)
-
-        run("rbenv global %s" % version)
-        run("rbenv rehash")
-        run("gem install bundler")
 
 def _secure_ssh():
     with ctx.sudo():
@@ -126,4 +87,4 @@ def setup():
     _timezone()
     _groups()
     _users()
-    # _secure_ssh()
+    # TODO Reactivate (and fix) _secure_ssh()
