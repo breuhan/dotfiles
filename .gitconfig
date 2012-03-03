@@ -56,7 +56,7 @@
     support = support/
     versiontag = RELEASE_
 [github]
-    token = 
+    token =
     user = michaelcontento
 [filter "github_token"]
-    clean = perl -pe \"s/token? =.*/token = 
+    clean = perl -pe \"s/^ *token ?=.*/    token =/i\" 
