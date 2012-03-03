@@ -11,22 +11,31 @@ from revolver import server
 from revolver import service
 from revolver import user
 from revolver.core import run, sudo
+from revolver.decorator import task
 from revolver.tool import git_chiefs
 from revolver.tool import git_extras
 from revolver.tool import git_flow
 from revolver.tool import ruby
 from revolver.tool import sudoers
-from revolver.vagrant import select as vm
 
-def _python():
-    # TODO Same API as ruby? Google this topic for current best practice! 
-    #      - Install requested python version system wide
-    #      - Auto-create virtualenv with the right interpreter
-    #      - Auto-workon into the right venv
-    package.ensure("python-setuptools")
-    sudo("easy_install pip")
-    sudo("pip install virtualenv")
-    sudo("pip install virtualenvwrapper")
+@task
+def vm():
+    """
+    Use the Vargrant VM in this directory 
+    """
+    from revolver.vagrant import select
+    select()
+
+@task(default=True)
+def setup():
+    """
+    Bootstrap the selected host(s)
+    """
+    _packages()
+    _timezone()
+    _groups()
+    _users()
+    # TODO Reactivate (and fix) _secure_ssh()
 
 def _packages():
     package.update()
@@ -42,6 +51,8 @@ def _packages():
     git_chiefs.ensure()
     git_extras.ensure()
     git_flow.ensure()
+
+    _python()
 
 def _timezone():
     server.timezone("UTC")
@@ -63,6 +74,16 @@ def _users():
         ruby.ensure("1.9.3-p125")
         _dotfiles()
 
+def _python():
+    # TODO Same API as ruby? Google this topic for current best practice! 
+    #      - Install requested python version system wide
+    #      - Auto-create virtualenv with the right interpreter
+    #      - Auto-workon into the right venv
+    package.ensure("python-setuptools")
+    sudo("easy_install pip")
+    sudo("pip install virtualenv")
+    sudo("pip install virtualenvwrapper")
+
 def _dotfiles():
     if not dir.exists(".dotfiles"):
         run("git clone git://github.com/michaelcontento/dotfiles.git .dotfiles")
@@ -79,10 +100,3 @@ def _secure_ssh():
         file.sed(cfg, ".*PasswordAuthentication .*", "PasswordAuthentication No")
 
     service.restart("ssh")
-
-def setup():
-    _packages()
-    _timezone()
-    _groups()
-    _users()
-    # TODO Reactivate (and fix) _secure_ssh()
