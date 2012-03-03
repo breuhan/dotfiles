@@ -10,15 +10,13 @@ from revolver import package
 from revolver import server
 from revolver import service
 from revolver import user
-from revolver.core import env, run, sudo
+from revolver.core import run, sudo
 from revolver.tool import git_chiefs
 from revolver.tool import git_extras
 from revolver.tool import git_flow
 from revolver.tool import ruby
 from revolver.tool import sudoers
-
-# TODO Fix revolver.vagrant.select to work with "vagrant ssh-config"
-env.hosts = ['vagrant@33.33.33.123']
+from revolver.vagrant import select as vm
 
 def _python():
     # TODO Same API as ruby? Google this topic for current best practice! 
