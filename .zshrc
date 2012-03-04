@@ -29,12 +29,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
+if [ -f $(which virtualenvwrapper.sh > /dev/null) ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export PIP_REQUIRE_VIRTUALENV=true
-    export PIP_RESPECT_VIRTUALENV=true
-    source /usr/local/bin/virtualenvwrapper.sh
+    source $(which virtualenvwrapper.sh) 
 fi
 
 if [ -f $HOME/.rvm/scripts/rvm ]; then
