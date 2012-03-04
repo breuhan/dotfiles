@@ -16,6 +16,7 @@ from revolver.tool import git_chiefs
 from revolver.tool import git_extras
 from revolver.tool import git_flow
 from revolver.tool import ruby
+from revolver.tool import python
 from revolver.tool import sudoers
 
 @task
@@ -52,8 +53,6 @@ def _packages():
     git_extras.ensure()
     git_flow.ensure()
 
-    _python()
-
 def _timezone():
     server.timezone("UTC")
     package.ensure("ntp")
@@ -70,19 +69,16 @@ def _users():
     user.ensure("michael", shell="/bin/zsh")
     group.user_ensure("admin", "michael")
 
-    with ctx.fake_login("michael"), ctx.rbenv():
+    # Because of the real login shell we're getting errors with the "start new
+    # shells in the last working directory"-feature of my ~/.zshrc! That's the
+    # reason why the ctx.cd() and the last run("cd $HOME") is used here.
+    with ctx.sudo("michael", login=True), ctx.cd("$HOME"):
         ruby.ensure("1.9.3-p125")
+        python.ensure("2.7.2")
         _dotfiles()
 
-def _python():
-    # TODO Same API as ruby? Google this topic for current best practice! 
-    #      - Install requested python version system wide
-    #      - Auto-create virtualenv with the right interpreter
-    #      - Auto-workon into the right venv
-    package.ensure("python-setuptools")
-    sudo("easy_install pip")
-    sudo("pip install virtualenv")
-    sudo("pip install virtualenvwrapper")
+        # Ensure a sane last working directory (see the comment above)
+        run("cd $HOME")
 
 def _dotfiles():
     if not dir.exists(".dotfiles"):
