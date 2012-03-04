@@ -37,10 +37,6 @@ if [ -f $(which virtualenvwrapper.sh > /dev/null) ]; then
     source $(which virtualenvwrapper.sh) 
 fi
 
-if [ -f $HOME/.rvm/scripts/rvm ]; then
-    source $HOME/.rvm/scripts/rvm
-fi
-
 if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
     source $HOME/.pythonbrew/etc/bashrc
 fi
