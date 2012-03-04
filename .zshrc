@@ -29,16 +29,16 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
+    source $HOME/.pythonbrew/etc/bashrc
+fi
+
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 if [ -f $(which virtualenvwrapper.sh > /dev/null) ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
     source $(which virtualenvwrapper.sh) 
-fi
-
-if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
-    source $HOME/.pythonbrew/etc/bashrc
 fi
 
 if [ -f $HOME/Workspace/adcloud/aws/environment ]; then
