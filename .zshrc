@@ -41,6 +41,10 @@ if [ -f $HOME/.rvm/scripts/rvm ]; then
     source $HOME/.rvm/scripts/rvm
 fi
 
+if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
+    source $HOME/.pythonbrew/etc/bashrc
+fi
+
 if [ -f $HOME/Workspace/adcloud/aws/environment ]; then
     source $HOME/Workspace/adcloud/aws/environment
 fi
