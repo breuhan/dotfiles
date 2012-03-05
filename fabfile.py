@@ -12,11 +12,12 @@ from revolver import service
 from revolver import user
 from revolver.core import run, sudo
 from revolver.decorator import task
+from revolver.tool import awsenv
 from revolver.tool import git_chiefs
 from revolver.tool import git_extras
 from revolver.tool import git_flow
-from revolver.tool import ruby
 from revolver.tool import python
+from revolver.tool import ruby
 from revolver.tool import sudoers
 
 @task
@@ -73,6 +74,7 @@ def _users():
     # shells in the last working directory"-feature of my ~/.zshrc! That's the
     # reason why the ctx.cd() and the last run("cd $HOME") is used here.
     with ctx.sudo("michael", login=True), ctx.cd("$HOME"):
+        awsenv.ensure()
         ruby.ensure("1.9.3-p125")
         python.ensure("2.7.2")
         _dotfiles()
