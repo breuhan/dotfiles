@@ -38,7 +38,7 @@ if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
 fi
 
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true TODO Reactivate this?
 export PIP_RESPECT_VIRTUALENV=true
 if [ -f $(which virtualenvwrapper.sh > /dev/null) ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
