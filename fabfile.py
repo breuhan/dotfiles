@@ -44,7 +44,7 @@ def _packages():
 
     package.ensure(["exuberant-ctags", "vim-nox"])
     package.ensure(["curl", "nmap", "rsync", "tcpdump", "traceroute", "wget"])
-    package.ensure(["ack-grep", "apt-show-versions", "iotop", "tree"])
+    package.ensure(["ack-grep", "apt-show-versions", "tree"])
     package.ensure(["atop", "htop", "iftop", "iotop", "itop", "latencytop", "powertop"])
     package.ensure(["tmux", "zsh"])
 
