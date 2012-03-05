@@ -45,10 +45,6 @@ if [ -f $(which virtualenvwrapper.sh > /dev/null) ]; then
     source $(which virtualenvwrapper.sh) 
 fi
 
-if [ -f $HOME/Workspace/adcloud/aws/environment ]; then
-    source $HOME/Workspace/adcloud/aws/environment
-fi
-
 function scm_update {
     for dir in $(find . -type d -maxdepth 1 -not -wholename '.'); do 
         echo "\e[0;32m>>>> Checking $dir \e[0m"
