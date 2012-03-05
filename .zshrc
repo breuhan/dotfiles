@@ -29,6 +29,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+if [ -f "$(command -v awsenv 2> /dev/null)" ]; then
+    eval "$(awsenv init -)"
+fi
+
 if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
     source $HOME/.pythonbrew/etc/bashrc
 fi
