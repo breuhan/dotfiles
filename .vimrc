@@ -1,174 +1,63 @@
-" Load vundle and let it manage itself
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" =============== Vundle Initialization ===============
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Used theme
-Bundle 'altercation/vim-colors-solarized'
+" ================ General Config ====================
 
-" Some plugins that provide magic sugar
-Bundle 'tpope/vim-surround'
-Bundle 'Raimondi/delimitMate'
-Bundle 'SearchComplete'
-Bundle 'ervandew/supertab'
-Bundle 'sickill/vim-pasta'
+set encoding=utf-8   " Default encoding
+set fo+=o            " Auto insert the comment leader after "o" / "O"
+set noerrorbells     " Disable the bell (beep or screen flash)
+set pastetoggle=<F2> " Disable all kinds of smartness for pasting
+set ttyfast          " Indicate fast terminal for smooth redrawing
 
-" PHP manual lookup
-Bundle 'michaelcontento/php-search-doc'
+set scrolloff=3      " Lines to keep above and below the cursor
+set sidescrolloff=8  " Chars to keep while scrolling
+set sidescroll=1     " Enable side scrolling
 
-" Automatically reload changes if detected
-set autoread
+" change the mapleader from "\" to ","
+let mapleader=","
 
-" Writes on make/shell commands
-set autowrite
-
-" Auto insert the comment leader after hitting 'o' / 'O' in Normal mode
-set fo+=o
-
-" This must be first, because it changes other options as side effect
-set nocompatible
-
-" Split line (opposite to S-J joining line) 
-nnoremap <silent> <C-J> gEa<CR><ESC>ew 
-
-" Hide buffers instead of closing
+" This makes vim act like all other editors, buffers can exist in the 
+" background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-" Display the 80 columns marker
-set colorcolumn=80
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" Indent, tabs and spaces
-set autoindent
-set copyindent
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+" =================== File IO  ======================
 
-" Get the numpad working
-:imap <Esc>Oq 1
-:imap <Esc>Or 2
-:imap <Esc>Os 3
-:imap <Esc>Ot 4
-:imap <Esc>Ou 5
-:imap <Esc>Ov 6
-:imap <Esc>Ow 7
-:imap <Esc>Ox 8
-:imap <Esc>Oy 9
-:imap <Esc>Op 0
-:imap <Esc>On .
-:imap <Esc>OQ /
-:imap <Esc>OR *
-:imap <Esc>Ol +
-:imap <Esc>OS -
-
-" Fix the backspace
-vnoremap <BS> d
-noremap <BS> dh
-
-" Wrap text instead of being on one line
-set lbr
-    
-" Disable all kinds of smartness for pasting
-set pastetoggle=<F2>
-
-" Enable mouse support
-set mouse=a
-
-" Highlight the current line
-set cul
-
-" Some stuff for MacVim
-set guioptions-=T
-set guifont=Monaco:h14
-
-" Folding
-set foldmethod=indent
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
-vnoremap <Space> zf
-autocmd BufRead,BufNewFile * normal zR
+set autoread         " Reload files changed outside vim
+au FocusLost * :wa   " Save when losing focus
+set autowrite        " Writes on make/shell commands
 
 " When vimrc is edited, reload it
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-" Theme options
-syntax on
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
-call togglebg#map("<F5>")
+" ================ Search Settings  =================
 
-" Basic options
-set backspace=indent,eol,start
-set encoding=utf-8
-set hidden
-set laststatus=0
-set scrolloff=3
-set showcmd
-set showmode
-set ttyfast   
-set wildmenu
-set wildmode=list:longest
+" Allow tab-complete words while typing
+Bundle 'SearchComplete'
 
-" I really like 80 columns
-set textwidth=80
-set formatoptions=tcrql
-    " t - autowrap to textwidth
-    " c - autowrap comments to textwidth
-    " r - autoinsert comment leader with <Enter>
-    " q - allow formatting of comments with :gq
-    " l - don't format already long lines
-
-" Backup and undo
-set history=1000         
-set nobackup
-set noswapfile
-set undolevels=1000
-set wildignore=*.swp,*.bak,*.pyc,*.class
-
-" Status, title and numbers
-set noerrorbells         
-set number
-set ruler
-set title                
-set visualbell           
-
-" change the mapleader from \ to ,
-let mapleader=","
-let g:mapleader=","
-
-" Make Y not dumb
-nnoremap Y y$
-
-" Searching
-nmap <leader><space> :noh<cr>
-set gdefault
-set hlsearch
-set ignorecase
-set incsearch
-set showmatch
-set smartcase
+set gdefault      " Default enable 'g' flag in substitue
 set highlight=lub
+set hlsearch      " Highlight searches by default
+set ignorecase    " Makes searching a lot easier 
+set incsearch     " Find the next match as we type
+set showmatch
+set smartcase     " Override ignorecase on upper case search string
 
-" Fuck you, manual key
-nnoremap K <nop>
-
-" ; is useless 
-nnoremap ; :
-
-" Save when losing focus
-au FocusLost * :wa
-
-" Sudo write
-cmap w!! w !sudo tee % >/dev/null
-
-" And make j,k work
-nnoremap j gj
-nnoremap k gk
+" Clear current search highlight
+nmap <leader><space> :noh<cr>
 
 " Center display line after searches
 nnoremap n nzz
@@ -178,11 +67,122 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-" Mac bindings for home/end
-imap <C-a> <Esc>^i
-imap <C-e> <Esc>g$i
-map <C-a> ^
-map <C-e> g$
+" ================ Turn Off Swap Files ==============
+
+set nobackup      " Don't make backups before overwriting files
+set noswapfile    " Don't use swapfiles
+set nowb          " Dont' make backups before writing files
+
+" ================ Persistent Undo ==================
+
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+set undodir=~/.vim/backups
+set undofile
+
+" ================ Indentation ======================
+
+set autoindent      " Copy indent from current line when starting a new one
+set expandtab       " Insert spaces instead of <Tab> in the insert mode
+set smartindent     " Do smart autoindenting when starting a new lines
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+filetype plugin on
+filetype indent on
+
+" Display trailing tabs and spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+" ============== Long line handling ================
+
+set linebreak           " Wrap lines at convenient points
+set nowrap              " Don't wrap lines
+
+set colorcolumn=80      " Display the 80 columns marker
+set textwidth=80        " Try to enforce a proper line length
+set formatoptions=tcrql
+    " t - autowrap to textwidth
+    " c - autowrap comments to textwidth
+    " r - autoinsert comment leader with <Enter>
+    " q - allow formatting of comments with :gq
+    " l - don't format already long lines
+
+" Toggle screen wrapping of long lines 
+nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
+
+" ================ Folds ============================
+
+set foldmethod=indent   " Fold based on indent
+set foldnestmax=3       " Deepest fold is 3 levels
+set nofoldenable        " Don't fold by default
+
+" Toggle folding with <Space>
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
+vnoremap <Space> zf
+
+" ================ Completion =======================
+
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.o,*.obj,*~
+set wildignore+=*vim/backups*
+
+" ============== Custom mappings ====================
+
+" Split line (opposite to S-J joining line) 
+nnoremap <silent> <C-J> gEa<CR><ESC>ew 
+
+" Make Y not dumb
+nnoremap Y y$
+
+" Fuck you, manual key
+nnoremap K <nop>
+
+" ; is useless
+nnoremap ; :
+
+" Sudo write
+cmap w!! w !sudo tee % >/dev/null
+
+" And make j,k work
+nnoremap j gj
+nnoremap k gk
+
+" Fix the backspace
+vnoremap <BS> d
+noremap <BS> dh
+
+" Edit vimrc in new tab
+nnoremap <Leader>ev :split $MYVIMRC<CR>
+
+" ============= Buffer management ===================
+
+map <Leader>- :split<CR>
+map <Leader>\| :vsplit<CR>
+map <Leader>\ :vsplit<CR>
+
+map <Leader><Left> <C-w><Left>
+map <Leader><Right> <C-w><Right>
+map <Leader><Down> <C-w><Down>
+map <Leader><Up> <C-w><Up>
+
+" Buffer movement with <leader> is consitent with tmux but somehow "painful" to
+" use and therefore this alternative :)
+map <M-S-Left> <Leader><Left>
+map <M-S-Right> <Leader><Right>
+map <M-S-Up> <Leader><Up>
+map <M-S-Down> <Leader><Down>
+
+" =============== Tab management ====================
+
+map <S-t> :tabnew<CR>
+map <S-Left> :tabnext<CR>
+map <S-Right> :tabprev<CR>
+
+" ============ OSX like movement ====================
 
 " Introduct new keycodes to vim for <alt-arrows>
 set <F13>=[1;3C
@@ -220,59 +220,64 @@ imap <M-Right> <Esc><Right>wi
 map <D-Left> <C-a>
 map <D-Right> <C-e>
 
-" Buffer creation and movement
-map <Leader>- :split<CR>
-map <Leader>\| :vsplit<CR>
-map <Leader>\ :vsplit<CR>
-map <Leader><Left> <C-w><Left>
-map <Leader><Right> <C-w><Right>
-map <Leader><Down> <C-w><Down>
-map <Leader><Up> <C-w><Up>
+" Mac bindings for home/end
+imap <C-a> <Esc>^i
+imap <C-e> <Esc>g$i
+map <C-a> ^
+map <C-e> g$
 
-" Buffer movement with <leader> is consitent with tmux but somehow "painful" to
-" use and therefore this alternative :)
-map <M-S-Left> <Leader><Left>
-map <M-S-Right> <Leader><Right>
-map <M-S-Up> <Leader><Up>
-map <M-S-Down> <Leader><Down>
+" =================== Theme =========================
 
-" Tab creation and movement
-map <S-t> :tabnew<CR>
-map <S-Left> :tabnext<CR>
-map <S-Right> :tabprev<CR>
+set number           " Enable line numbers
+set ruler            " Show the line and column number of the cursor
+set showcmd          " Show incomplete commands down the bottom
+set showmode         " Show current mode down the bottom
+set cul              " Highlight the current line
+set background=dark  " Use the dark background color
 
-" Edit vimrc in new tab
-nnoremap <Leader>ev :split $MYVIMRC<CR>
+Bundle 'altercation/vim-colors-solarized'
 
-" Highlight VCS conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+let g:solarized_termtrans=1
+colorscheme solarized
 
-" Toggle screen wrapping of long lines 
-nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
+" Turn on syntax highlighting. It's important to activate
+" this AFTER we've loaded the theme!
+syntax on
 
-" Mappings for all file navigation plugins
+" ============== File navigation ====================
+
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+
 nmap <leader>y :FufFileWithCurrentBufferDir<CR>
 nmap <leader>u :FufTaggedFile<CR>
 
-" Make TComment accessible
+" ============= Easier commenting ===================
+
 Bundle 'tomtom/tcomment_vim'
+
 map <leader>c <leader>__
 map <leader>C <leader>_p
 
-" Mapping for hammer.vim
+" ========= Preview markup languages ================
+
 Bundle 'robgleeson/hammer.vim'
+
 map <leader>p :Hammer<CR>
 
-" Vundle mappings
+" ============ Plugin management ====================
+
+" Vundle itself has to be loaded at the top
+
 nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
 
-" Tabular
+" ========== Tabular formating of block =============
+
 Bundle 'godlygeek/tabular'
+
 nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
 nmap <Leader>t: :Tabularize /:\zs<CR>
@@ -284,8 +289,10 @@ vmap <Leader>t> :Tabularize /=><CR>
 nmap <Leader>ts :Tabularize / \zs<CR>
 vmap <Leader>ts :Tabularize / \zs<CR>
 
-" Taglist
+" ================ Tag browser ======================
+
 Bundle 'taglist.vim'
+
 map <Leader>h :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 let Tlist_Inc_Winwidth = 0
@@ -294,9 +301,26 @@ let Tlist_GainFocus_On_ToggleOpen= 1
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
 
-" Syntax checking magic
+" =============== Syntax checks =====================
+
 Bundle 'scrooloose/syntastic'
+
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 map <Leader>sc :SyntasticCheck<CR>
+
+" ================= Uncategorized ===================
+
+" Easy manipulation of surroundings
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+
+" Automatic closing of quotes, parenthesis, brackets, etc
+Bundle 'Raimondi/delimitMate'
+
+" Perform insert completion using <Tab>
+Bundle 'ervandew/supertab'
+
+" Fast php manual lookup
+Bundle 'michaelcontento/php-search-doc'
