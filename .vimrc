@@ -96,6 +96,9 @@ filetype indent on
 " Display trailing tabs and spaces visually
 set list listchars=tab:\ \ ,trail:·
 
+" Clear trailing spaces. _s is used to restore the last search pattern register
+nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 " ============== Long line handling ================
 
 set linebreak           " Wrap lines at convenient points
