@@ -337,10 +337,3 @@ Bundle 'ervandew/supertab'
 
 " Fast php manual lookup
 Bundle 'michaelcontento/php-search-doc'
-
-" Pretty statusbar
-Bundle 'skwp/vim-powerline'
-let g:Powerline_stl_path_style='short'
-let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='skwp'
-let g:Powerline_colorscheme='skwp'
