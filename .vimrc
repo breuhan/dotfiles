@@ -241,6 +241,7 @@ set background=dark  " Use the dark background color
 Bundle 'altercation/vim-colors-solarized'
 
 let g:solarized_termtrans=1
+let g:solarized_contrast="high"
 colorscheme solarized
 
 " Turn on syntax highlighting. It's important to activate
