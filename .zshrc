@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME_PREFIX_ROOT=1
 ZSH_THEME_USE_RPROMPT=1
-ZSH_THEME="miloshadzic" 
+ZSH_THEME="miloshadzic"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -42,11 +42,11 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 if [ -f "$(command -v virtualenvwrapper.sh 2> /dev/null)" ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-    source "$(command -v virtualenvwrapper.sh)" 
+    source "$(command -v virtualenvwrapper.sh)"
 fi
 
 function scm_update {
-    for dir in $(find . -type d -maxdepth 1 -not -wholename '.'); do 
+    for dir in $(find . -type d -maxdepth 1 -not -wholename '.'); do
         echo "\e[0;32m>>>> Checking $dir \e[0m"
         (
             cd $dir \

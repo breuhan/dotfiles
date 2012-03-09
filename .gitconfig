@@ -2,10 +2,10 @@
     name = Michael Contento
     email = michaelcontento@gmail.com
 [alias]
-    cm = commit --message 
+    cm = commit --message
     cma = commit --all --message
     co = checkout
-    logg = log --left-right --graph  
+    logg = log --left-right --graph
     st = status --short --branch
     unstage = reset HEAD --
     who = !git shortlog --summary --email | sort -r
@@ -59,4 +59,4 @@
     token =
     user = michaelcontento
 [filter "github_token"]
-    clean = perl -pe \"s/^ *token ?=.*/    token =/i\" 
+    clean = perl -pe \"s/^ *token ?=.*/    token =/i\"

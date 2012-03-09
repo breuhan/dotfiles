@@ -24,7 +24,7 @@ set sidescroll=1     " Enable side scrolling
 " change the mapleader from "\" to ","
 let mapleader=","
 
-" This makes vim act like all other editors, buffers can exist in the 
+" This makes vim act like all other editors, buffers can exist in the
 " background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
@@ -51,7 +51,7 @@ Bundle 'SearchComplete'
 set gdefault      " Default enable 'g' flag in substitue
 set highlight=lub
 set hlsearch      " Highlight searches by default
-set ignorecase    " Makes searching a lot easier 
+set ignorecase    " Makes searching a lot easier
 set incsearch     " Find the next match as we type
 set showmatch
 set smartcase     " Override ignorecase on upper case search string
@@ -113,7 +113,7 @@ set formatoptions=tcrql
     " q - allow formatting of comments with :gq
     " l - don't format already long lines
 
-" Toggle screen wrapping of long lines 
+" Toggle screen wrapping of long lines
 nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
 
 " ================ Folds ============================
@@ -135,8 +135,8 @@ set wildignore+=*vim/backups*
 
 " ============== Custom mappings ====================
 
-" Split line (opposite to S-J joining line) 
-nnoremap <silent> <C-J> gEa<CR><ESC>ew 
+" Split line (opposite to S-J joining line)
+nnoremap <silent> <C-J> gEa<CR><ESC>ew
 
 " Make Y not dumb
 nnoremap Y y$

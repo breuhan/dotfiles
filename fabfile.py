@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from __future__ import with_statement
 
@@ -23,7 +23,7 @@ from revolver.tool import sudoers
 @task
 def vm():
     """
-    Use the Vargrant VM in this directory 
+    Use the Vargrant VM in this directory
     """
     from revolver.vagrant import select
     select()

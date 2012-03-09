@@ -1,5 +1,5 @@
 # TODO: Fix strange locales on OSX
-export LC_ALL=en_US.UTF-8 
+export LC_ALL=en_US.UTF-8
 
 # Enable awsenv if installed in the users home directory
 if [ -d "$HOME/.awsenv/bin" ]; then

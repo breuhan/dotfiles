@@ -56,7 +56,7 @@ fi
 #
 # Install vim plugins
 #
-echo ">> Installing all vim plugins" 
+echo ">> Installing all vim plugins"
 vim -e -c BundleInstall -c quitall > /dev/null
 
 #
