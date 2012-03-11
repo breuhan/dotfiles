@@ -326,6 +326,36 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 map <Leader>sc :SyntasticCheck<CR>
 
+" ==================== Supertab =====================
+
+Bundle 'ervandew/supertab'
+
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType rb,ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType sql set omnifunc=sqlcomplete#Complete
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
+let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
+let g:SuperTabDefaultCompletionType="context"
+
+" g:SuperTabClosePreviewOnPopupClose is somehow buggy ...
+" (Whole block copied from http://stackoverflow.com/a/3107159)
+"
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " ================= Uncategorized ===================
 
 " Easy manipulation of surroundings
@@ -344,9 +374,6 @@ let g:gist_show_privates=1
 
 " Automatic closing of quotes, parenthesis, brackets, etc
 Bundle 'Raimondi/delimitMate'
-
-" Perform insert completion using <Tab>
-Bundle 'ervandew/supertab'
 
 " Fast php manual lookup
 Bundle 'michaelcontento/php-search-doc'
