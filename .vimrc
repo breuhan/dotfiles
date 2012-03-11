@@ -363,6 +363,9 @@ Bundle 'tpope/vim-repeat'
 " Pretty tagbar for classes
 Bundle 'majutsushi/tagbar'
 
+" Auto-update ctags
+Bundle 'vim-scripts/AutoTag'
+
 " Creating new gists
 Bundle 'mattn/gist-vim'
 let g:gist_detect_filetype=1
