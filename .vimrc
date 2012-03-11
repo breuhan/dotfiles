@@ -164,6 +164,7 @@ nnoremap k gk
 " Fix the backspace
 vnoremap <BS> d
 noremap <BS> dh
+set backspace=indent,eol,start
 
 " Edit vimrc in new tab
 nnoremap <Leader>ev :split $MYVIMRC<CR>
