@@ -118,13 +118,22 @@ nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
 
 " ================ Folds ============================
 
-set foldmethod=indent   " Fold based on indent
 set foldnestmax=3       " Deepest fold is 3 levels
 set nofoldenable        " Don't fold by default
 
 " Toggle folding with <Space>
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
+nnoremap <Space> za
 vnoremap <Space> zf
+
+" Open all folds automatically
+autocmd BufRead,BufNewFile * normal zR
+
+" Define folds automatically by indent level, but would also like to create
+" folds manually. See: http://vim.wikia.com/wiki/Folding
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 " ================ Completion =======================
 
