@@ -51,10 +51,8 @@ Bundle 'SearchComplete'
 set gdefault      " Default enable 'g' flag in substitue
 set highlight=lub
 set hlsearch      " Highlight searches by default
-set ignorecase    " Makes searching a lot easier
 set incsearch     " Find the next match as we type
 set showmatch
-set smartcase     " Override ignorecase on upper case search string
 
 " Clear current search highlight
 nmap <leader><space> :noh<cr>
