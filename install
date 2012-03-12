@@ -60,29 +60,6 @@ echo ">> Installing all vim plugins"
 vim -e -c BundleInstall -c quitall > /dev/null
 
 #
-# Install all required gems if possible
-#
-echo ">> Install required gems (e.g. for some vim plugins)"
-
-type bundle > /dev/null
-bundleInstalled=$?
-
-type gem > /dev/null
-gemsInstalled=$?
-
-if [ ! $bundleInstalled ] || [ ! $gemsInstalled ]; then
-    echo "!! Bundler OR gems missing"
-    exit 1
-fi
-
-bundle > /dev/null
-
-if [ $? -ne 0 ]; then
-    echo "!! Something went wrong with bundler"
-    exit 1
-fi
-
-#
 # Done! :D
 #
 echo ">> Done"
