@@ -79,10 +79,13 @@ def _users():
     # shells in the last working directory"-feature of my ~/.zshrc! That's the
     # reason why the ctx.cd() and the last run("cd $HOME") is used here.
     with ctx.sudo("michael", login=True), ctx.cd("$HOME"):
+        _dotfiles()
         awsenv.ensure()
         ruby.ensure("1.9.3-p125")
         python.ensure("2.7.2")
-        _dotfiles()
+
+        with ctx.cd(".dotfiles"):
+            run("bundle install")
 
         # Ensure a sane last working directory (see the comment above)
         run("cd $HOME")
