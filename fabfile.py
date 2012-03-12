@@ -70,6 +70,11 @@ def _users():
     user.ensure("michael", shell="/bin/zsh")
     group.user_ensure("admin", "michael")
 
+    # This prevents the zsh new-user prompt, if this is the first run and we
+    # haven't installed our dotfiles yet.
+    with ctx.sudo("michael"):
+        file.touch(user.home_directory("michael") + "/.zshrc")
+
     # Because of the real login shell we're getting errors with the "start new
     # shells in the last working directory"-feature of my ~/.zshrc! That's the
     # reason why the ctx.cd() and the last run("cd $HOME") is used here.
