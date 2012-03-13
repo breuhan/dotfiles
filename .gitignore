@@ -16,3 +16,4 @@
 # Ignore all vundle bundles except vundle itself
 /.vim/bundle
 !/.vim/bundle/vundle
+/.vim/ctrlp-cache

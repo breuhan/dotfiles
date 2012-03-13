@@ -137,7 +137,7 @@ augroup END
 
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.o,*.obj,*~
+set wildignore=*.o,*.obj,*~,.vagrant
 set wildignore+=*vim/backups*
 
 " ============== Custom mappings ====================
@@ -258,11 +258,18 @@ syntax on
 
 " ============== File navigation ====================
 
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'kien/ctrlp.vim'
 
-nmap <leader>y :FufFileWithCurrentBufferDir<CR>
-nmap <leader>u :FufTaggedFile<CR>
+nmap <Leader>u :CtrlPMRUFiles<CR>
+let g:ctrlp_map = '<Leader>y'
+
+let g:ctrlp_by_filename = 1
+let g:ctrlp_cache_dir = $HOME . '/.vim/ctrlp-cache'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_switch_buffer = 2
+let g:ctrlp_working_path_mode = 0
 
 " ============= Easier commenting ===================
 
