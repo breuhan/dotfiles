@@ -263,6 +263,7 @@ Bundle 'kien/ctrlp.vim'
 nmap <Leader>u :CtrlPMRUFiles<CR>
 let g:ctrlp_map = '<Leader>y'
 
+let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_cache_dir = $HOME . '/.vim/ctrlp-cache'
 let g:ctrlp_clear_cache_on_exit = 0
