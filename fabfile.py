@@ -16,6 +16,7 @@ from revolver.tool import awsenv
 from revolver.tool import git_chiefs
 from revolver.tool import git_extras
 from revolver.tool import git_flow
+from revolver.tool import nodejs
 from revolver.tool import python
 from revolver.tool import ruby
 from revolver.tool import sudoers
@@ -81,8 +82,9 @@ def _users():
     with ctx.sudo("michael", login=True), ctx.cd("$HOME"):
         _dotfiles()
         awsenv.ensure()
-        ruby.ensure("1.9.3-p125")
+        nodejs.ensure("0.6.13")
         python.ensure("2.7.2")
+        ruby.ensure("1.9.3-p125")
 
         with ctx.cd(".dotfiles"):
             run("bundle install")
