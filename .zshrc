@@ -33,6 +33,10 @@ if [ -f "$(command -v awsenv 2> /dev/null)" ]; then
     eval "$(awsenv init -)"
 fi
 
+if [ -f "$HOME/.nvm/nvm.sh" ]; then
+    source $HOME/.nvm/nvm.sh
+fi
+
 if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
     source $HOME/.pythonbrew/etc/bashrc
 fi
