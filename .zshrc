@@ -34,7 +34,7 @@ if [ -f "$(command -v awsenv 2> /dev/null)" ]; then
 fi
 
 if [ -f "$HOME/.nvm/nvm.sh" ]; then
-    source $HOME/.nvm/nvm.sh
+    source $HOME/.nvm/nvm.sh 2> /dev/null
 fi
 
 if [ -f $HOME/.pythonbrew/etc/bashrc ]; then
