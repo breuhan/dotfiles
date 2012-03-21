@@ -61,3 +61,5 @@
     user = michaelcontento
 [filter "github_token"]
     clean = perl -pe \"s/^ *token ?=.*/    token =/i\"
+[push]
+    default = upstream
