@@ -20,7 +20,8 @@
     interactive = auto
     status = auto
 [chiefs]
-    ignore = (master|stable|production|stage)
+    ignore = (master|stable|production|stage|develop)
+    reference = develop
 [branch]
     autosetupmerge = true
     autosetuprebase = always
