@@ -325,12 +325,12 @@ let Tlist_WinWidth = 45
 
 " =============== Syntax checks =====================
 
-Bundle 'scrooloose/syntastic'
-
-let g:syntastic_auto_jump=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-map <Leader>sc :SyntasticCheck<CR>
+" Bundle 'scrooloose/syntastic'
+"
+" let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_loc_list_height=5
+" map <Leader>sc :SyntasticCheck<CR>
 
 " ==================== Supertab =====================
 
