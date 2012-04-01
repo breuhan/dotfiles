@@ -377,5 +377,5 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'michaelcontento/php-search-doc'
 
 " Useful auto-complete snippets
-Bundle 'spf13/snipmate.vim'
-Bundle 'spf13/snipmate-snippets'
+" Bundle 'spf13/snipmate.vim'
+" Bundle 'spf13/snipmate-snippets'
