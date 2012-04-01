@@ -19,6 +19,7 @@ from revolver.tool import git_flow
 from revolver.tool import nodejs
 from revolver.tool import python
 from revolver.tool import ruby
+from revolver.tool import lxc
 from revolver.tool import sudoers
 
 @task
@@ -54,6 +55,8 @@ def _packages():
     git_chiefs.ensure()
     git_extras.ensure()
     git_flow.ensure()
+
+    lxc.ensure()
 
 def _timezone():
     server.timezone("Europe/Berlin")
