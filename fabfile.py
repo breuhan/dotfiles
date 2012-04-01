@@ -76,8 +76,7 @@ def _users():
 
     # This prevents the zsh new-user prompt, if this is the first run and we
     # haven't installed our dotfiles yet.
-    with ctx.sudo("michael"):
-        file.touch(user.home_directory("michael") + "/.zshrc")
+    file.touch(user.home_directory("michael") + "/.zshrc", owner="michael")
 
     # Because of the real login shell we're getting errors with the "start new
     # shells in the last working directory"-feature of my ~/.zshrc! That's the
