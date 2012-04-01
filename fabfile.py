@@ -56,7 +56,7 @@ def _packages():
     git_flow.ensure()
 
 def _timezone():
-    server.timezone("UTC")
+    server.timezone("Europe/Berlin")
     package.ensure("ntp")
 
 def _groups():
