@@ -336,10 +336,10 @@ let Tlist_WinWidth = 45
 
 Bundle 'ervandew/supertab'
 
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
-let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
-let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+" let g:SuperTabDefaultCompletionType="context"
+" let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
+" let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
+" let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 let g:SuperTabClosePreviewOnPopupClose=1
 " g:SuperTabClosePreviewOnPopupClose is somehow buggy ...
