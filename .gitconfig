@@ -25,6 +25,8 @@
 [branch]
     autosetupmerge = true
     autosetuprebase = always
+[rebase]
+    stat = true
 [merge]
     stat = true
     tool = vimdiff
