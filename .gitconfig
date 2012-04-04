@@ -28,7 +28,6 @@
 [rebase]
     stat = true
 [merge]
-    stat = true
     tool = vimdiff
 [core]
     excludesfile = ~/.gitexcludes
