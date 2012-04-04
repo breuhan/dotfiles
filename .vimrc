@@ -200,8 +200,8 @@ map <M-S-Down> <Leader><Down>
 " =============== Tab management ====================
 
 map <S-t> :tabnew<CR>
-map <S-Left> :tabnext<CR>
-map <S-Right> :tabprev<CR>
+map <S-Left> :tabprev<CR>
+map <S-Right> :tabnext<CR>
 
 " ============ OSX like movement ====================
 
