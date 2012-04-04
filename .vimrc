@@ -32,7 +32,17 @@ set hidden
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" =================== File IO  ======================
+" ================ Terminal stuff ===================
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
+" =================== File IO =======================
 
 set autoread         " Reload files changed outside vim
 au FocusLost * :wa   " Save when losing focus
@@ -43,7 +53,7 @@ if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-" ================ Search Settings  =================
+" ================ Search Settings ==================
 
 " Allow tab-complete words while typing
 Bundle 'SearchComplete'
