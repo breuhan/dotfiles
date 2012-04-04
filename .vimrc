@@ -101,11 +101,8 @@ set tabstop=4
 filetype plugin on
 filetype indent on
 
-" Display trailing tabs and spaces visually
-set list listchars=tab:\ \ ,trail:·
-
-" Clear trailing spaces. _s is used to restore the last search pattern register
-nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" Usually 4 but JS is slightly different
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " ============== Long line handling ================
 
@@ -123,6 +120,9 @@ set formatoptions=tcrql
 
 " Toggle screen wrapping of long lines
 nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
+
+" Clear trailing spaces. _s is used to restore the last search pattern register
+nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " ================ Folds ============================
 
@@ -265,6 +265,9 @@ colorscheme solarized
 " Turn on syntax highlighting. It's important to activate
 " this AFTER we've loaded the theme!
 syntax on
+
+" Display trailing tabs and spaces visually
+set list listchars=tab:\ \ ,trail:·
 
 " ============== File navigation ====================
 
