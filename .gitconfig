@@ -25,8 +25,9 @@
 [branch]
     autosetupmerge = true
     autosetuprebase = always
-[merge]
+[rebase]
     stat = true
+[merge]
     tool = vimdiff
 [core]
     excludesfile = ~/.gitexcludes

@@ -32,7 +32,17 @@ set hidden
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" =================== File IO  ======================
+" ================ Terminal stuff ===================
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
+" =================== File IO =======================
 
 set autoread         " Reload files changed outside vim
 au FocusLost * :wa   " Save when losing focus
@@ -43,7 +53,7 @@ if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-" ================ Search Settings  =================
+" ================ Search Settings ==================
 
 " Allow tab-complete words while typing
 Bundle 'SearchComplete'
@@ -91,11 +101,8 @@ set tabstop=4
 filetype plugin on
 filetype indent on
 
-" Display trailing tabs and spaces visually
-set list listchars=tab:\ \ ,trail:·
-
-" Clear trailing spaces. _s is used to restore the last search pattern register
-nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" Usually 4 but JS is slightly different
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " ============== Long line handling ================
 
@@ -113,6 +120,9 @@ set formatoptions=tcrql
 
 " Toggle screen wrapping of long lines
 nnoremap <Leader>w :set invwrap<Bar>set wrap?<CR>
+
+" Clear trailing spaces. _s is used to restore the last search pattern register
+nnoremap <silent> <Leader>S :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " ================ Folds ============================
 
@@ -190,8 +200,8 @@ map <M-S-Down> <Leader><Down>
 " =============== Tab management ====================
 
 map <S-t> :tabnew<CR>
-map <S-Left> :tabnext<CR>
-map <S-Right> :tabprev<CR>
+map <S-Left> :tabprev<CR>
+map <S-Right> :tabnext<CR>
 
 " ============ OSX like movement ====================
 
@@ -255,6 +265,9 @@ colorscheme solarized
 " Turn on syntax highlighting. It's important to activate
 " this AFTER we've loaded the theme!
 syntax on
+
+" Display trailing tabs and spaces visually
+set list listchars=tab:\ \ ,trail:·
 
 " ============== File navigation ====================
 
@@ -325,21 +338,21 @@ let Tlist_WinWidth = 45
 
 " =============== Syntax checks =====================
 
-Bundle 'scrooloose/syntastic'
-
-let g:syntastic_auto_jump=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-map <Leader>sc :SyntasticCheck<CR>
+" Bundle 'scrooloose/syntastic'
+"
+" let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_loc_list_height=5
+" map <Leader>sc :SyntasticCheck<CR>
 
 " ==================== Supertab =====================
 
 Bundle 'ervandew/supertab'
 
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
-let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
-let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+" let g:SuperTabDefaultCompletionType="context"
+" let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
+" let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
+" let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 let g:SuperTabClosePreviewOnPopupClose=1
 " g:SuperTabClosePreviewOnPopupClose is somehow buggy ...
@@ -377,5 +390,5 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'michaelcontento/php-search-doc'
 
 " Useful auto-complete snippets
-Bundle 'spf13/snipmate.vim'
-Bundle 'spf13/snipmate-snippets'
+" Bundle 'spf13/snipmate.vim'
+" Bundle 'spf13/snipmate-snippets'
