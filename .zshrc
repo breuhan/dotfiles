@@ -2,6 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
+ZSH_THEME_PREFIX_OSX=1
 ZSH_THEME_PREFIX_ROOT=1
 ZSH_THEME_USE_RPROMPT=1
 ZSH_THEME="miloshadzic"
