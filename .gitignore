@@ -1,4 +1,5 @@
 *.pyc
+.DS_Store
 
 # We're useing Vagrant only for local tests
 /.vagrant
