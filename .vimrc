@@ -175,6 +175,9 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap j gj
 nnoremap k gk
 
+" Replace selection without copying into default register
+vmap R "_dp
+
 " Fix the backspace
 vnoremap <BS> d
 noremap <BS> dh
