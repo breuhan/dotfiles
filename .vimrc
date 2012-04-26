@@ -75,6 +75,10 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
+" 'Very magic' regexes in searches
+nnoremap / /\v
+nnoremap ? ?\v
+
 " ================ Turn Off Swap Files ==============
 
 set nobackup      " Don't make backups before overwriting files
