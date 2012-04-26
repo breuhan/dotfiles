@@ -298,12 +298,6 @@ Bundle 'tomtom/tcomment_vim'
 map <leader>c <leader>__
 map <leader>C <leader>_p
 
-" ========= Preview markup languages ================
-
-Bundle 'robgleeson/hammer.vim'
-
-map <leader>p :Hammer<CR>
-
 " ============ Plugin management ====================
 
 " Vundle itself has to be loaded at the top
