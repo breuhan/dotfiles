@@ -334,6 +334,7 @@ Bundle 'tpope/vim-repeat'
 
 " Pretty tagbar for classes
 Bundle 'majutsushi/tagbar'
+map <Leader>t :TagbarOpenAutoClose<CR>
 
 " Auto-update ctags
 Bundle 'vim-scripts/AutoTag'
@@ -344,6 +345,7 @@ let g:gist_detect_filetype=1
 let g:gist_open_browser_after_post=1
 let g:gist_private=1
 let g:gist_show_privates=1
+map <Leader>gl :Gist -la<CR>
 
 " Automatic closing of quotes, parenthesis, brackets, etc
 Bundle 'Raimondi/delimitMate'
