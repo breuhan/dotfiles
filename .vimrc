@@ -307,45 +307,6 @@ nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
 
-" ========== Tabular formating of block =============
-
-Bundle 'godlygeek/tabular'
-
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t: :Tabularize /:\zs<CR>
-vmap <Leader>t: :Tabularize /:\zs<CR>
-nmap <Leader>t, :Tabularize /,\zs<CR>
-vmap <Leader>t, :Tabularize /,\zs<CR>
-nmap <Leader>t> :Tabularize /=><CR>
-vmap <Leader>t> :Tabularize /=><CR>
-nmap <Leader>ts :Tabularize / \zs<CR>
-vmap <Leader>ts :Tabularize / \zs<CR>
-
-" ================ Tag browser ======================
-
-Bundle 'taglist.vim'
-
-map <Leader>h :TlistToggle<CR>
-let Tlist_Close_On_Select = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen= 1
-let Tlist_Inc_Winwidth = 0
-let Tlist_Show_One_File = 1
-let Tlist_Sort_Type = "name"
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 45
-
-" =============== Syntax checks =====================
-
-" Bundle 'scrooloose/syntastic'
-"
-" let g:syntastic_auto_jump=1
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_loc_list_height=5
-" map <Leader>sc :SyntasticCheck<CR>
-
 " ==================== Supertab =====================
 
 Bundle 'ervandew/supertab'
