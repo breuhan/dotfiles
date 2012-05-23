@@ -23,6 +23,7 @@
     diff = auto
     interactive = auto
     status = auto
+    ui = 1
 [chiefs]
     ignore = (master|stable|production|stage|develop)
     reference = develop
