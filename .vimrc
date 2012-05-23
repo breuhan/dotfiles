@@ -151,8 +151,22 @@ augroup END
 
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.o,*.obj,*~,.vagrant
+set wildignore=*.o,*.obj,*~
+
+" OSX
+set wildignore+=*DS_Store*
+
+" Common stuff
+set wildignore+=*/log/**
+set wildignore+=.vagrant
 set wildignore+=*vim/backups*
+
+" NodeJS
+set wildignore+=*/node_modules/**
+
+" CakePHP
+set wildignore+=*/app/tmp/**
+set wildignore+=*/vendors/**
 
 " ============== Custom mappings ====================
 
