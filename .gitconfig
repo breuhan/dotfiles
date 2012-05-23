@@ -11,7 +11,8 @@
     logg = log --left-right --graph
     st = status --short --branch
     unstage = reset HEAD --
-    who = !git shortlog --summary --email | sort -r
+    undo = reset --soft HEAD^
+    count = shortlog --summary --email --numbered
     lg = log --pretty=history --abbrev --date=relative --graph
     ff = pull --ff-only
 [pretty]
