@@ -303,7 +303,7 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.vim/ctrlp-cache'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_working_path_mode = 0
 
