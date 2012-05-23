@@ -261,13 +261,15 @@ set ruler            " Show the line and column number of the cursor
 set showcmd          " Show incomplete commands down the bottom
 set showmode         " Show current mode down the bottom
 set cul              " Highlight the current line
-set background=dark  " Use the dark background color
+" set background=dark  " Use the dark background color
 
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
+" let g:solarized_termtrans=1
+" let g:solarized_contrast="high"
+" colorscheme solarized
 
-let g:solarized_termtrans=1
-let g:solarized_contrast="high"
-colorscheme solarized
+Bundle 'nanotech/jellybeans.vim'
+colorscheme jellybeans
 
 " Turn on syntax highlighting. It's important to activate
 " this AFTER we've loaded the theme!
