@@ -189,6 +189,13 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap j gj
 nnoremap k gk
 
+" Fix some common typos
+command! W w
+command! Q q
+
+" Make line completion easier
+imap <C-l> <C-x><C-l>
+
 " Replace selection without copying into default register
 vmap R "_dp
 
