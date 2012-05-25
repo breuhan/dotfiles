@@ -32,6 +32,13 @@ set hidden
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" find conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" upper/lower word
+nmap <leader>L mQviwU`Q
+nmap <leader>l mQviwu`Q
+
 " ================ Terminal stuff ===================
 
 if &term =~ '^screen'
