@@ -413,3 +413,7 @@ nmap <Leader>z <c-w>o
 
 " Extended % matching
 Bundle 'matchit.zip'
+
+" Graphical undo helper
+Bundle 'Gundo'
+nmap <Leader>U :GundoToggle<CR>
