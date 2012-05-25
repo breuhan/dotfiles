@@ -102,6 +102,12 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
+" Some syntax definitions
+Bundle 'pangloss/vim-javascript'
+Bundle 'leshill/vim-json'
+Bundle 'mutewinter/nginx.vim'
+Bundle 'acustodioo/vim-tmux'
+
 filetype plugin on
 filetype indent on
 
@@ -395,9 +401,3 @@ nmap <Leader>z <c-w>o
 
 " Extended % matching
 Bundle 'matchit.zip'
-
-" Some syntax definitions
-Bundle 'pangloss/vim-javascript'
-Bundle 'leshill/vim-json'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'acustodioo/vim-tmux'
