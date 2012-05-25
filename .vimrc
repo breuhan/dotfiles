@@ -114,6 +114,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'leshill/vim-json'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'acustodioo/vim-tmux'
+Bundle 'tpope/vim-git'
 
 filetype plugin on
 filetype indent on
