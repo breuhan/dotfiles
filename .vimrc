@@ -231,6 +231,11 @@ map <M-S-Right> <Leader><Right>
 map <M-S-Up> <Leader><Up>
 map <M-S-Down> <Leader><Down>
 
+" Automatically resize splits when resizing window
+if has("autocmd")
+  autocmd VimResized * wincmd =
+endif
+
 " =============== Tab management ====================
 
 map <S-t> :tabnew<CR>
