@@ -170,10 +170,17 @@ set wildignore=*.o,*.obj,*~
 " OSX
 set wildignore+=*DS_Store*
 
+" Files we're never gonna use vim for
+set wildignore+=*.png,*.jpg,*.gif
+
 " Common stuff
 set wildignore+=*/log/**
+set wildignore+=*/tmp/**
 set wildignore+=.vagrant
 set wildignore+=*vim/backups*
+
+" Python
+set wildignore+=*.pyc,*.pyo
 
 " NodeJS
 set wildignore+=*/node_modules/**
