@@ -15,6 +15,7 @@
     count = shortlog --summary --email --numbered
     lg = log --pretty=history --abbrev --date=relative --graph
     ff = pull --ff-only
+    branchr = !"git branch -r | grep"
 [pretty]
     changelog = * %s
     history = %C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)
