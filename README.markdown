@@ -8,3 +8,7 @@ From your homedirectory (on Linux/Mac OSX):
 * `cd .vim`
 * `git submodule init`
 * `git submodule update`
+
+## Update
+
+* `git submodule foreach git pull origin master`
