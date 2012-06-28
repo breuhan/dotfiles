@@ -2,6 +2,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax on
+filetype plugin indent on
 colorscheme darkblue
 set smartindent
 set autoindent
@@ -10,11 +11,20 @@ set ic " ignore case in search
 set incsearch " incremental search
 set hlsearch " highlight search results
 set smartcase " ignore case when lowercase
-set number
-
-
+set number " Line numbers
+set textwidth=0 " Do not wrap words (insert)
+set nowrap              " Do not wrap words (view)
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
+set ruler               " line and column number of the cursor position
+set wildmenu " enhanced command completion
+set autowriteall " Automatically save before commands like :next and :make
+set autoread " automatically read feil that has been changed on disk and doesn't have changes in vim
 
 set viminfo='10,\"100,:20,%,n~/.viminfo
+
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+set shell=/bin/bash     " use bash for shell commands
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
@@ -33,9 +43,6 @@ function! Tab_Or_Complete()
 	endfunction
 	:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 	:set dictionary="/usr/dict/words"
-
-
-
 
 function! ResCur()
 	if line("'\"") <= line("$")
