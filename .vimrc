@@ -382,7 +382,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " ================= Hammer.Vim ======================
 
 Bundle 'matthias-guenther/hammer.vim'
-map <Leader>h :Hammer<CR>
+map <Leader>p :Hammer<CR>
 
 " ================= Uncategorized ===================
 
