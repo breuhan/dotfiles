@@ -111,6 +111,7 @@ set tabstop=4
 
 " Some syntax definitions
 Bundle 'pangloss/vim-javascript'
+Bundle 'michaelcontento/Monkey-VIM'
 Bundle 'leshill/vim-json'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'acustodioo/vim-tmux'
