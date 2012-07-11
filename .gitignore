@@ -9,10 +9,9 @@
 /revolver
 
 # Keep some ssh stuff secret
-/.ssh/id_dsa
-/.ssh/id_rsa
-/.ssh/known_hosts
-/.ssh/authorized_keys
+/.ssh/
+/secret-files.list
+/secret-files.random
 
 # Ignore all vundle bundles except vundle itself
 /.vim/bundle
