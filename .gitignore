@@ -10,8 +10,8 @@
 
 # Keep some ssh stuff secret
 /.ssh/
-/secret-files.list
-/secret-files.random
+/secret-files.*
+!/secret-files.sh
 
 # Ignore all vundle bundles except vundle itself
 /.vim/bundle
