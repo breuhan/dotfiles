@@ -29,6 +29,7 @@ install the tools itself (e.g. tmux) and start working.
     See the License for the specific language governing permissions and
     limitations under the License.
 
+  [dotfiles]: https://github.com/michaelcontento/dotfiles
   [Vim]: http://www.vim.org
   [Vundle]: https://github.com/gmarik/vundle
   [dotfiles]: https://github.com/michaelcontento/dotfiles
