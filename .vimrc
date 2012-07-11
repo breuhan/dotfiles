@@ -379,6 +379,11 @@ let g:SuperTabClosePreviewOnPopupClose=1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" ================= Hammer.Vim ======================
+
+Bundle 'matthias-guenther/hammer.vim'
+map <Leader>h :Hammer<CR>
+
 " ================= Uncategorized ===================
 
 " Easy manipulation of surroundings
