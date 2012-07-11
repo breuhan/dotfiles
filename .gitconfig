@@ -14,6 +14,7 @@
     undo = reset --soft HEAD^
     count = shortlog --summary --email --numbered
     lg = log --pretty=history --abbrev --date=relative --graph
+    pushall = !"for remote in $(git remote); do echo '>>>' $remote; git push $remote; done"
     ff = pull --ff-only
     branchr = !"git branch -r | grep"
 [pretty]
