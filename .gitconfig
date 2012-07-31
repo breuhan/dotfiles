@@ -67,6 +67,7 @@
 [github]
     token =
     user = michaelcontento
+    password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [filter "github_token"]
     clean = perl -pe \"s/^ *token ?=.*/    token =/i\"
 [push]
