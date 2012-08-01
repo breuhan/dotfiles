@@ -30,7 +30,7 @@ plugins=($plugins awsenv rbenv pythonbrew virtualenv nvm)
 # -> Functions
 plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
 # -> Only some aliases
-plugins=($plugins python aliases)
+plugins=($plugins python aliases monkey)
 # -> Only completion
 plugins=($plugins redis-cli bundler pip npm git-flow vagrant gem)
 
