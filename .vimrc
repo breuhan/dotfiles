@@ -180,6 +180,9 @@ set wildignore+=*/tmp/**
 set wildignore+=.vagrant
 set wildignore+=*vim/backups*
 
+" Monkey
+set wildignore+=*.build/**
+
 " Python
 set wildignore+=*.pyc,*.pyo
 
