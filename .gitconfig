@@ -7,8 +7,8 @@
 [alias]
     cm = commit --message
     cma = commit --all --message
-    co = checkout
     logg = log --left-right --graph
+    co = !"f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
     st = status --short --branch
     unstage = reset HEAD --
     undo = reset --soft HEAD^
