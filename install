@@ -54,6 +54,15 @@ if [ -e "${fromDir}" ]; then
 fi
 
 #
+# OSX tools / settings
+#
+./.osx
+
+command -v foo >/dev/null 2>&1 \
+    || ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+./.brew
+
+#
 # Install vim plugins
 #
 echo ">> Installing all vim plugins"
@@ -89,15 +98,6 @@ pip install virtualenvwrapper
 git clone git://github.com/creationix/nvm.git ~/.nvm
 nvm install v0.8.16
 nvm alias default v0.8.16
-
-#
-# OSX tools / settings
-#
-./.osx
-
-command -v foo >/dev/null 2>&1 \
-    || ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-./.brew
 
 #
 # Done! :D
