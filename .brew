@@ -1,6 +1,13 @@
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
 brew upgrade
 
-# --- CORE TOOLS
+###############################################################################
+# CORE TOOLS                                                                  #
+###############################################################################
+
 brew tap homebrew/dupes
 brew install homebrew/dupes/awk
 brew install homebrew/dupes/grep
@@ -18,26 +25,27 @@ brew install ack
 # TODO: ensure zsh loads this
 # /usr/local/share/zsh/site-functions/_ack
 
-# --- SCM
-brew install mercurial
-brew install gist
-brew install git
-brew install git-extras
-
-# --- HTOP
 brew install htop
 # required to enable all features of htop
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
 
-# --- VIM
 brew install vim --with-ruby --with-python
 brew install ctags-exuberant
 
-# --- RBENV
 brew install rbenv
 # make it visible for the rbenv plugin of oh-my-zsh
 ln -s /usr/local/opt/rbenv ~/.rbenv
 brew install ruby-build
 
+###############################################################################
+# SCM TOOLS                                                                   #
+###############################################################################
+
+brew install mercurial
+brew install gist
+brew install git
+brew install git-extras
+
+# Remove outdated versions from the cellar
 brew cleanup

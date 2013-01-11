@@ -97,7 +97,7 @@ nvm alias default v0.8.16
 
 command -v foo >/dev/null 2>&1 \
     || ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-./brew
+./.brew
 
 #
 # Done! :D
