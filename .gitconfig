@@ -95,6 +95,7 @@
     stat = true
 [merge]
     tool = vimdiff
+    log = true
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
