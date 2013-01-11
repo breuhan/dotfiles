@@ -5,18 +5,69 @@
     show-refs = yes
     tab-size = 4
 [alias]
-    cm = commit --message
-    co = checkout
-    cor = !"f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
+    # basics
     st = status --short --branch
-    unstage = reset HEAD --
-    undo = reset --soft HEAD^
-    count = shortlog --summary --email --numbered
-    lg = log --pretty=history --abbrev --date=relative --graph
-    pushall = !"for remote in $(git remote); do echo '>>>' $remote; git push $remote; done"
-    ff = pull --ff-only
-    branchr = !"git branch -r | grep"
-    amend = commit --amend -C HEAD
+    co = checkout
+    cog = "!f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
+    br = branch
+    brg = "!git branch --all --remote | grep"
+    la = alias
+    f = "!git ls-files | grep -i"
+
+    # log
+    le = log --oneline --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls1 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lc  = "!f() { git ll "$1"^.."$1"; }; f"
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+    # diff
+    d = diff
+    dc = diff --cached
+    dl = "!git ll -1"
+    dlc = diff --cached HEAD^
+    dr  = "!git diffr"
+    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+    # commit
+    ci = commit
+    cm = commit --message
+    cma = commit --all --message
+    ca = commit --amend
+    amend = commit --amend
+    caa = commit --all --amend -C HEAD
+
+    # log
+    filelog = log --patch
+    fl = log --patch
+
+    # reset commands
+    r = reset
+    r1 = reset HEAD^
+    r2 = reset HEAD^^
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
+
+    # stash
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+
+    # grep
+    grep = grep -Ii
+    gr = grep -Ii
+    gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+
+    # tag
+    lasttag = describe --tags --abbrev=0
+    lt = "!git lasttag"
+
+    # merge
+    ours = "!f() { git co --ours $@ && git add $@; }; f"
+    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [pretty]
     changelog = * %s
     history = %C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)
