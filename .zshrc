@@ -52,7 +52,7 @@ plugins=($plugins awsenv pythonbrew nvm)
 plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
 
 # -> Only some aliases
-plugins=($plugins python aliases monkey)
+plugins=($plugins python aliases monkey history encode64)
 
 # -> Only completion
 # TODO: npm temporary disabled for speed
