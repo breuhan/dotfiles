@@ -20,6 +20,7 @@ brew install rsync
 brew install tree
 brew install wget --enable-iri
 brew install zsh --disable-etcdir
+brew install ngrep
 
 brew install ack
 # TODO: ensure zsh loads this
