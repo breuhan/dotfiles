@@ -14,6 +14,12 @@
     la = alias
     f = "!git ls-files | grep -i"
     ap = add --patch
+    go = checkout -B
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
 
     # log
     le = log --oneline --decorate
