@@ -22,6 +22,23 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Make vim the default editor
+export EDITOR="vim"
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Say how long a command took, if it took more than 30 seconds
+export REPORTTIME=30
+
+# Don’t write over existing files with >, use >! instead
+setopt NOCLOBBER
+
 # Which plugins would you like to load?
 # -> Special stuff for OSX
 plugins=(gnu-utils osx-bindkey brew-fixes)
