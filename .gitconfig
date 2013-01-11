@@ -13,6 +13,7 @@
     brg = "!git branch --all --remote | grep"
     la = alias
     f = "!git ls-files | grep -i"
+    ap = add --patch
 
     # log
     le = log --oneline --decorate
@@ -33,6 +34,7 @@
 
     # commit
     ci = commit
+    civ = commit --verbose
     cm = commit --message
     cma = commit --all --message
     ca = commit --amend
