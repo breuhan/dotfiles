@@ -1,7 +1,0 @@
-# Fix alt-left and alt-right in Terminal.app
-"\e[1;9D": backward-word
-"\e[1;9C": forward-word
-
-# Fix alt-left and alt-right in tmux
-"\e[1;3D": backward-word
-"\e[1;3C": forward-word
