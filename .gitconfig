@@ -98,6 +98,7 @@
     log = true
 [core]
     excludesfile = ~/.gitexcludes
+    attributesfile = ~/.gitattributes
     autocrlf = false
     whitespace = tab-in-indent,trailing-space,cr-at-eol
     editor = /usr/bin/vim
