@@ -130,3 +130,5 @@
 [gist]
     private = yes
     browse = yes
+[oh-my-zsh]
+	hide-status = 1
