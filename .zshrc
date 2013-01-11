@@ -24,15 +24,22 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load?
 # -> Special stuff for OSX
-plugins=(gnu-utils osx-bindkey)
+plugins=(gnu-utils osx-bindkey brew-fixes)
+
 # -> PATH modifications
-plugins=($plugins awsenv rbenv pythonbrew virtualenv nvm)
+# TODO: rbenv temporary disabled for speed
+# TODO: virtualenv temporary disabled for speed
+plugins=($plugins awsenv pythonbrew nvm)
+
 # -> Functions
 plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
+
 # -> Only some aliases
 plugins=($plugins python aliases monkey)
+
 # -> Only completion
-plugins=($plugins redis-cli bundler pip npm git-flow vagrant gem)
+# TODO: npm temporary disabled for speed
+plugins=($plugins redis-cli bundler pip vagrant gem git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
