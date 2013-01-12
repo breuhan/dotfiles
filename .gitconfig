@@ -97,11 +97,13 @@
     tool = vimdiff
     log = true
 [core]
+    pager = less -R --quit-if-one-screen
     excludesfile = ~/.gitexcludes
     attributesfile = ~/.gitattributes
     autocrlf = false
     whitespace = tab-in-indent,trailing-space,cr-at-eol
     editor = /usr/bin/vim
+    logallrefupdates = true
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
