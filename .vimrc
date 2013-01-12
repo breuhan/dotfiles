@@ -347,6 +347,16 @@ let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_working_path_mode = 0
 
+let g:ctrlp_use_caching = 0
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = {
+  \ 'types': {
+   \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co'],
+   \ 2: ['.ctrlp_root_dir', 'find %s -type f'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
+
 " ============= Easier commenting ===================
 
 Bundle 'tomtom/tcomment_vim'
