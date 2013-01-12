@@ -333,8 +333,8 @@ set list listchars=tab:\ \ ,trail:·
 
 Bundle 'kien/ctrlp.vim'
 
-nmap <Leader>u :CtrlPMRUFiles<CR>
-let g:ctrlp_map = '<Leader>y'
+nmap <Leader>O :CtrlPMRUFiles<CR>
+let g:ctrlp_map = '<Leader>o'
 
 let g:ctrlp_open_multiple_files = 'tr'
 let g:ctrlp_arg_map = 1
@@ -395,7 +395,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " ================= Hammer.Vim ======================
 
 Bundle 'matthias-guenther/hammer.vim'
-map <Leader>p :Hammer<CR>
+map <Leader>m :Hammer<CR>
 
 " ================= Uncategorized ===================
 
