@@ -419,8 +419,6 @@ Bundle 'michaelcontento/php-search-doc'
 " Useful auto-complete snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'spf13/snipmate.vim'
-Bundle 'spf13/snipmate-snippets'
 
 " Swap parameters of a function or a comma separated list with a single command
 Bundle 'mutewinter/swap-parameters'
@@ -428,11 +426,6 @@ Bundle 'mutewinter/swap-parameters'
 "At every search command, it automatically prints:
 " -->> At match #N out of M matches
 Bundle 'henrik/vim-indexed-search'
-
-" Search the current directory with Ack
-Bundle 'mileszs/ack.vim'
-nmap <Leader>a :Ack<Space>
-nmap <Leader>A :AckFromSearch<CR>
 
 " Easy zoom into and out of a window
 Bundle 'ZoomWin'
