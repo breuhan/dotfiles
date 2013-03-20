@@ -74,7 +74,7 @@ bundle
 # Python
 #
 curl -kL http://xrl.us/pythonbrewinstall | bash
-pythonbrew install --no-test 2.7.3
+pythonbrew install 2.7.3
 pythonbrew switch 2.7.3
 pip install virtualenv
 pip install virtualenvwrapper
