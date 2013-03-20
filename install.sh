@@ -37,11 +37,13 @@ for dir in $(ls -a1); do
 done
 
 ## Ruby
+echo ">> Ruby"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # rbenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
 git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+(cd $HOME/.rbenv/plugins/ruby-build && git pull)
 rbenv rehash
 
 rbenv install 2.0.0-p0
@@ -56,6 +58,7 @@ bundle
 rbenv rehash
 
 ## Python
+echo ">> Python"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
@@ -68,25 +71,30 @@ pyenv rehash
 
 # pyenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
 git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+(cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
 pyenv rehash
 
 ## NodeJS
+echo ">> Node"
 source $HOME/.nvm/nvm.sh
 nvm install v0.8.16
 nvm alias default v0.8.16
 
 ## homebrew
+echo ">> Homebrew"
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ./.brew
 
 ## OSX settings
+echo ">> OSX settings"
 ./.osx
 
 ## Install vim plugins
-echo ">> Installing all vim plugins"
+echo ">> Vim plugins"
 vim -e -c BundleInstall -c quitall > /dev/null
 
 ## ZSH
+echo ">> ZSH as default shell"
 chsh -s /bin/zsh
 
 ## Done! :D
