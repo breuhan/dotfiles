@@ -44,9 +44,8 @@ setopt NOCLOBBER
 plugins=(gnu-utils osx-bindkey brew-fixes)
 
 # -> PATH modifications
-# TODO: rbenv temporary disabled for speed
 # TODO: virtualenv temporary disabled for speed
-plugins=($plugins awsenv pythonbrew nvm)
+plugins=($plugins awsenv pythonbrew nvm rbenv)
 
 # -> Functions
 plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
