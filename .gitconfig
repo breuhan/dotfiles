@@ -21,6 +21,10 @@
     branches = branch -a
     remotes = remote -v
 
+    this = !git init && git add . && git commit -m \"initial commit\"
+    rma  = !git ls-files -z --deleted | xargs -0 git rm
+    ign = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+
     # log
     le = log --oneline --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
