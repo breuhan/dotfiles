@@ -7,3 +7,6 @@
 [submodule "secret-files"]
 	path = secret-files
 	url = git://github.com/michaelcontento/secret-files.git
+[submodule ".nvm"]
+	path = .nvm
+	url = git://github.com/creationix/nvm.git
