@@ -36,6 +36,38 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 nmap <leader>L mQviwU`Q
 nmap <leader>l mQviwu`Q
 
+" tries to avoid those annoying "hit enter to continue" messages
+" if it still doesn't help with certain commands, add a second <cr>
+" at the end of the map command
+set shortmess=a
+
+" Look for tag def in a "tags" file in the dir of the current file, then for
+" that same file in every folder above the folder of the current file, until
+" the root.
+set tags=./tags;/
+
+" allow backspace and cursor keys to cross line boundaries
+set whichwrap+=<,>,h,l
+
+" none of these should be word dividers, so make them not be
+set iskeyword+=_,$,@,%,#
+
+" CTRL-U and CTRL-W in insert mode cannot be undone.  Use CTRL-G u to first
+" break undo, so that we can undo those changes after inserting a line break.
+" For more info, see: http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <C-u> <C-g>u<C-u>
+inoremap <C-w> <C-g>u<C-w>
+
+" Use Q for formatting the current paragraph (or visual selection)
+vnoremap Q gq
+nnoremap Q gqap
+
+" Using '<' and '>' in visual mode to shift code by a tab-width left/right by
+" default exits visual mode. With this mapping we remain in visual mode after
+" such an operation.
+vnoremap < <gv
+vnoremap > >gv
+
 " ================ Terminal stuff ===================
 
 if &term =~ '^screen'
@@ -52,10 +84,8 @@ set autoread         " Reload files changed outside vim
 au FocusLost * :wa   " Save when losing focus
 set autowrite        " Writes on make/shell commands
 
-" When vimrc is edited, reload it
-if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+set fileformat=unix            " file mode is unix
+set fileformats=unix,dos,mac   " detects unix, dos, mac file formats in that order
 
 " ================ Search Settings ==================
 
@@ -66,6 +96,8 @@ set gdefault      " Default enable 'g' flag in substitue
 set highlight=lub
 set hlsearch      " Highlight searches by default
 set incsearch     " Find the next match as we type
+set ignorecase    " case insensitive searching
+set smartcase     " but become case sensitive if you type uppercase characters
 set showmatch
 
 " Clear current search highlight
@@ -78,10 +110,6 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
-
-" 'Very magic' regexes in searches
-nnoremap / /\v
-nnoremap ? ?\v
 
 " ================ Turn Off Swap Files ==============
 
@@ -96,9 +124,13 @@ set nowb          " Dont' make backups before writing files
 set undodir=~/.vim/backups
 set undofile
 
+set history=1000        " remember more commands and search history
+set undolevels=1000     " use many levels of undo"
+
 " ================ Indentation ======================
 
-set autoindent      " Copy indent from current line when starting a new one
+set autoindent      " on new lines, match indent of previous line
+set copyindent      " copy the previous indentation on autoindenting
 set expandtab       " Insert spaces instead of <Tab> in the insert mode
 set smartindent     " Do smart autoindenting when starting a new lines
 set smarttab
@@ -161,8 +193,18 @@ augroup END
 
 " ================ Completion =======================
 
-set wildmenu
-set wildmode=list:longest
+" When you type the first tab, it will complete as much as possible, the second
+" tab hit will provide a list, the third and subsequent tabs will cycle through
+" completion options so you can complete the file without further keys
+set wildmode=longest,list,full
+set wildmenu            " completion with menu
+
+" The "longest" option makes completion insert the longest prefix of all
+" the possible matches; see :h completeopt
+set completeopt=menu,menuone,longest
+set switchbuf=useopen,usetab
+
+" compiled stuff
 set wildignore=*.o,*.obj,*~
 
 " OSX
@@ -200,9 +242,6 @@ nnoremap Y y$
 
 " Fuck you, manual key
 nnoremap K <nop>
-
-" ; is useless
-nnoremap ; :
 
 " Sudo write
 cmap w!! w !sudo tee % >/dev/null
@@ -254,9 +293,9 @@ endif
 
 " =============== Tab management ====================
 
-map <S-t> :tabnew<CR>
-map <S-Left> :tabprev<CR>
-map <S-Right> :tabnext<CR>
+nmap <S-t> :tabnew<CR>
+nmap <S-Left> :tabprev<CR>
+nmap <S-Right> :tabnext<CR>
 
 " ============ OSX like movement ====================
 
@@ -286,21 +325,21 @@ map <F18> <S-M-Down>
 map! <F18> <S-M-Down>
 
 " Jump words with alt-arrow (osx style)
-map <M-Left> b
-map <M-Right> w
+nmap <M-Left> b
+nmap <M-Right> w
 imap <M-Left> <Esc>bi
 imap <M-Right> <Esc><Right>wi
 
 " Enable command movement
 " TODO: Fix commad-up and command-down
-map <D-Left> <C-a>
-map <D-Right> <C-e>
+nmap <D-Left> <C-a>
+nmap <D-Right> <C-e>
 
 " Mac bindings for home/end
 imap <C-a> <Esc>^i
 imap <C-e> <Esc>g$i
-map <C-a> ^
-map <C-e> g$
+nmap <C-a> ^
+nmap <C-e> g$
 
 " =================== Theme =========================
 
@@ -339,16 +378,15 @@ let g:ctrlp_arg_map = 1
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.vim/ctrlp-cache'
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_switch_buffer = 2
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_use_caching = 0
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.png$|\.jpg$|\.gif$'
 let g:ctrlp_user_command = {
   \ 'types': {
-   \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co'],
+   \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co | egrep -v "\.(gif|jpg|png|ttf)$"'],
    \ 2: ['.ctrlp_root_dir', 'find %s -type f'],
   \ },
   \ 'fallback': 'find %s -type f'
@@ -358,8 +396,8 @@ let g:ctrlp_user_command = {
 
 Bundle 'tomtom/tcomment_vim'
 
-map <leader>c <leader>__
-map <leader>C <leader>_p
+nmap <leader>c <leader>__
+nmap <leader>C <leader>_p
 
 " ============ Plugin management ====================
 
@@ -369,30 +407,6 @@ nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
-
-" ==================== Supertab =====================
-
-Bundle 'ervandew/supertab'
-
-" let g:SuperTabDefaultCompletionType="context"
-" let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
-" let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
-" let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-
-let g:SuperTabClosePreviewOnPopupClose=1
-" g:SuperTabClosePreviewOnPopupClose is somehow buggy ...
-" (Whole block copied from http://stackoverflow.com/a/3107159)
-"
-" If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" ================= Hammer.Vim ======================
-
-Bundle 'matthias-guenther/hammer.vim'
-map <Leader>m :Hammer<CR>
 
 " ================= Uncategorized ===================
 
@@ -404,21 +418,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'majutsushi/tagbar'
 map <Leader>t :TagbarOpenAutoClose<CR>
 
-" Auto-update ctags
-Bundle 'vim-scripts/AutoTag'
-
 " Automatic closing of quotes, parenthesis, brackets, etc
 Bundle 'Raimondi/delimitMate'
 
 " Fast php manual lookup
 Bundle 'michaelcontento/php-search-doc'
-
-" Useful auto-complete snippets
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-
-" Swap parameters of a function or a comma separated list with a single command
-Bundle 'mutewinter/swap-parameters'
 
 "At every search command, it automatically prints:
 " -->> At match #N out of M matches
@@ -445,3 +449,67 @@ augroup Binary
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
 augroup END
+
+" Bundle "scrooloose/syntastic"
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_auto_jump=1
+" set statusline+=%{SyntasticStatuslineFlag()}
+
+Bundle 'Valloric/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 7
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+Bundle 'suan/vim-instant-markdown'
+" gem install redcarpet pygments.rb
+" npm -g install instant-markdown-d
+
+Bundle 'Lokaltog/vim-easymotion'
+
+" toggle cursor line hightlight with inset/edit mode
+:autocmd InsertEnter,InsertLeave * set cul!
+
+" ==================== Supertab =====================
+
+Bundle 'ervandew/supertab'
+
+" let g:SuperTabDefaultCompletionType="context"
+" let g:SuperTabCompletionContexts=["s:ContextText", "s:ContextDiscover"]
+" let g:SuperTabContextTextOmniPrecedence=["&omnifunc", "&completefunc"]
+" let g:SuperTabContextDiscoverDiscovery=["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
+let g:SuperTabClosePreviewOnPopupClose=1
+" g:SuperTabClosePreviewOnPopupClose is somehow buggy ...
+" (Whole block copied from http://stackoverflow.com/a/3107159)
+"
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" set makeprg=/Applications/Monkey/bin/trans_macos\ -config=debug\ -target=glfw\ -run\ %
+" nmap <Leader>r :make<CR>
+
+Bundle 'airblade/vim-gitgutter'
+au BufWinEnter * sign define mysign
+au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
+
+highlight clear SignColumn
+
+" Bundle 'wikitopian/hardmode'
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" " relative numbers FTW
+" set rnu
+" au InsertEnter * :set nu
+" au InsertLeave * :set rnu
+" au FocusLost * :set nu
+" au FocusGained * :set rnu
+
+Bundle 'Lokaltog/vim-easymotion'
+
+Bundle 'hwrod/interactive-replace'
