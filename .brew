@@ -14,6 +14,7 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/less
 brew install aespipe
 brew install coreutils
+brew install dos2unix
 brew install findutils --default-names
 brew install imagemagick
 brew install rsync
