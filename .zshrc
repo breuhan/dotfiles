@@ -46,7 +46,7 @@ plugins=(gnu-utils osx-bindkey brew-fixes)
 
 # -> PATH modifications
 # TODO: virtualenv temporary disabled for speed
-plugins=($plugins awsenv pythonbrew nvm rbenv)
+plugins=($plugins awsenv nvm rbenv pyenv)
 
 # -> Functions
 plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
