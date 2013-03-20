@@ -32,6 +32,7 @@ brew install htop
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2/bin/htop
 
+brew install mercurial
 brew install vim --with-ruby --with-python
 brew install ctags-exuberant
 
@@ -44,7 +45,6 @@ brew install ruby-build
 # SCM TOOLS                                                                   #
 ###############################################################################
 
-brew install mercurial
 brew install gist
 brew install git
 brew install git-extras
