@@ -41,19 +41,6 @@ for dir in $(ls -a1); do
 done
 
 #
-# Link the keyboard layout under OSX
-#
-fromDir=~/Library/Keyboard\ Layouts/
-layoutFile=$(ls -1 *.keylayout)
-
-if [ -e "${fromDir}" ]; then
-    echo ">> Installing new OSX keyboard layout"
-
-    rm -rf "${fromDir}/${layoutFile}"
-    ln -s "${toDir}/${layoutFile}" "${fromDir}/${layoutFile}"
-fi
-
-#
 # OSX tools / settings
 #
 ./.osx
