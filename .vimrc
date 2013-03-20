@@ -14,15 +14,12 @@ Bundle 'gmarik/vundle'
 set encoding=utf-8   " Default encoding
 set fo+=o            " Auto insert the comment leader after "o" / "O"
 set noerrorbells     " Disable the bell (beep or screen flash)
-set pastetoggle=<F2> " Disable all kinds of smartness for pasting
+set pastetoggle=<Leader>p " Disable all kinds of smartness for pasting
 set ttyfast          " Indicate fast terminal for smooth redrawing
 
 set scrolloff=3      " Lines to keep above and below the cursor
 set sidescrolloff=8  " Chars to keep while scrolling
 set sidescroll=1     " Enable side scrolling
-
-" change the mapleader from "\" to ","
-let mapleader=","
 
 " This makes vim act like all other editors, buffers can exist in the
 " background without being in a window.
@@ -234,21 +231,21 @@ nnoremap <Leader>ev :split $MYVIMRC<CR>
 
 " ============= Buffer management ===================
 
-map <Leader>- :split<CR>
-map <Leader>\| :vsplit<CR>
-map <Leader>\ :vsplit<CR>
+nmap <Leader>- :split<CR>
+nmap <Leader>\| :vsplit<CR>
+nmap <Leader>\ :vsplit<CR>
 
-map <Leader><Left> <C-w><Left>
-map <Leader><Right> <C-w><Right>
-map <Leader><Down> <C-w><Down>
-map <Leader><Up> <C-w><Up>
+nmap <Leader><Left> <C-w><Left>
+nmap <Leader><Right> <C-w><Right>
+nmap <Leader><Down> <C-w><Down>
+nmap <Leader><Up> <C-w><Up>
 
 " Buffer movement with <leader> is consitent with tmux but somehow "painful" to
 " use and therefore this alternative :)
-map <M-S-Left> <Leader><Left>
-map <M-S-Right> <Leader><Right>
-map <M-S-Up> <Leader><Up>
-map <M-S-Down> <Leader><Down>
+nmap <M-S-Left> <Leader><Left>
+nmap <M-S-Right> <Leader><Right>
+nmap <M-S-Up> <Leader><Up>
+nmap <M-S-Down> <Leader><Down>
 
 " Automatically resize splits when resizing window
 if has("autocmd")
