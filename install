@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-#
-# Update git submodules
-#
+## Update git submodules
 echo ">> Updating all git submodules"
 git submodule update --init --recursive
 
-#
-# Link all dotfiles from the current directory
-#
+## Link all dotfiles from the current directory
 echo ">> Creating all symlinks"
 
 toDir=$(pwd)
@@ -40,53 +36,58 @@ for dir in $(ls -a1); do
     ln -s "${linkTo}" "${linkFrom}"
 done
 
-#
-# OSX tools / settings
-#
-./.osx
+## Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-command -v foo >/dev/null 2>&1 \
-    || ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-./.brew
+# rbenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
+git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+rbenv rehash
 
-#
-# Install vim plugins
-#
-echo ">> Installing all vim plugins"
-vim -e -c BundleInstall -c quitall > /dev/null
+rbenv install 2.0.0-p0
+rbenv global 2.0.0-p0
+rbenv shell 2.0.0-p0
+rbenv rehash
 
-#
-# ZSH
-#
-chsh -s /bin/zsh
-
-#
-# Ruby
-#
-rbenv install 1.9.3-p327
-rbenv global 1.9.3-p327
-rbenv shell 1.9.3-p327
 gem install bundler
 rbenv rehash
+
 bundle
+rbenv rehash
 
-#
-# Python
-#
-curl -kL http://xrl.us/pythonbrewinstall | bash
-pythonbrew install 2.7.3
-pythonbrew switch 2.7.3
-pip install virtualenv
-pip install virtualenvwrapper
+## Python
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
 
-#
-# NodeJS
-#
-git clone git://github.com/creationix/nvm.git ~/.nvm
+pyenv install 2.7.3
+pyenv install 3.3.0
+pyenv install pypy-1.9
+pyenv global 2.7.3
+pyenv shell 2.7.3
+pyenv rehash
+
+# pyenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
+git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+pyenv rehash
+
+## NodeJS
+source $HOME/.nvm/nvm.sh
 nvm install v0.8.16
 nvm alias default v0.8.16
 
-#
-# Done! :D
-#
+## homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+./.brew
+
+## OSX settings
+./.osx
+
+## Install vim plugins
+echo ">> Installing all vim plugins"
+vim -e -c BundleInstall -c quitall > /dev/null
+
+## ZSH
+chsh -s /bin/zsh
+
+## Done! :D
 echo ">> Done"
