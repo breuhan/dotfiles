@@ -1,12 +1,7 @@
-*.pyc
+*.py[co]
+.pip/download_cache
+
 .DS_Store
-
-# We're useing Vagrant only for local tests
-/.vagrant
-/Vagrantfile
-
-# Rapid development revolver symlink
-/revolver
 
 # Keep some ssh stuff secret
 /.ssh/
