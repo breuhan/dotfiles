@@ -5,50 +5,22 @@
     show-refs = yes
     tab-size = 4
 [alias]
-    # basics
-    st = status --short --branch
-    co = checkout
-    cog = "!f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
-    br = branch
-    brg = "!git branch --all --remote | grep"
-    la = alias
-    f = "!git ls-files | grep -i"
-    ap = add --patch
-    go = checkout -B
+    go = "!f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
+    amend = commit --amend
+    this = !git init && git add . && git commit -m \"initial commit\"
+    rm-all  = !git ls-files -z --deleted | xargs -0 git rm
+    ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+    grep = grep -Ii
+    lasttag = describe --tags --abbrev=0
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
     remotes = remote -v
 
-    this = !git init && git add . && git commit -m \"initial commit\"
-    rma  = !git ls-files -z --deleted | xargs -0 git rm
-    ign = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
-
     # log
     l = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    ls1 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    lc  = "!f() { git ll "$1"^.."$1"; }; f"
-    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-
-    # diff
-    d = diff
-    dc = diff --cached
-    dl = "!git ll -1"
-    dlc = diff --cached HEAD^
-    dr  = "!git diffr"
-    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
-
-    # commit
-    m = commit --verbose
-    mm = commit --message
-    mma = commit --all --message
-    amend = commit --amend
-
-    # log
-    filelog = log --patch
-    fl = log --patch
+    ll = !git l --patch
 
     # reset commands
     r = reset
@@ -62,15 +34,6 @@
     sl = stash list
     sa = stash apply
     ss = stash save
-
-    # grep
-    grep = grep -Ii
-    gr = grep -Ii
-    gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
-
-    # tag
-    lasttag = describe --tags --abbrev=0
-    lt = "!git lasttag"
 
     # merge
     ours = "!f() { git co --ours $@ && git add $@; }; f"

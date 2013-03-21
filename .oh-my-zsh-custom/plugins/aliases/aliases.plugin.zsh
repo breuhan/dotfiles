@@ -73,13 +73,19 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # Some git shortcuts
-alias gc="git co"
+alias gc="git checkout"
 alias gd="git diff"
+alias gD="git diff --cached"
 alias gl="git l"
-alias gm="git m"
-alias gmm="git mm"
-alias gmma="git mma"
-alias gs="git st"
+alias gs="git status --short --branch"
+
+alias gm="git commit --verbose"
+alias gM="git commit --message"
+alias gma="git commit --all --verbose"
+alias gMa="git commit --all --message"
+
 alias ga="git add -p"
+alias gA="git add -A"
+
 alias gp="git push"
-alias gpa="git push --all && git push --tags"
+alias gP="git push --all && git push --tags"
