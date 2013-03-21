@@ -74,6 +74,9 @@ done
 
 # Some git shortcuts
 alias gc="git co"
-alias gl="git l"
-alias gs="git st"
 alias gd="git diff"
+alias gl="git l"
+alias gm="git m"
+alias gmm="git mm"
+alias gmma="git mma"
+alias gs="git st"

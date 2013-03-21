@@ -41,13 +41,10 @@
     diffr  = "!f() { git diff "$1"^.."$1"; }; f"
 
     # commit
-    ci = commit
-    civ = commit --verbose
-    cm = commit --message
-    cma = commit --all --message
-    ca = commit --amend
+    m = commit --verbose
+    mm = commit --message
+    mma = commit --all --message
     amend = commit --amend
-    caa = commit --all --amend -C HEAD
 
     # log
     filelog = log --patch
