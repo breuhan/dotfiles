@@ -51,3 +51,9 @@ alias marr="$TRANS -config=release -target=Android_Game -run    $FILE"
 alias maur="$TRANS -config=release -target=Android_Game -update $FILE"
 
 unset $TRANS $FILE
+
+
+# SHOVEL
+
+alias rel="shovel meta.commandr.build"
+alias ass="shovel meta.icon.resize && shovel meta.screenshots.export"
