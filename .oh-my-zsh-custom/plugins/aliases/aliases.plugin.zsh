@@ -102,5 +102,8 @@ alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtp="git stash pop"
 
+alias gu="git pull"
+alias gU="git pull --no-rebase"
+
 alias gp="git push"
 alias gP="git push --all && git push --tags"
