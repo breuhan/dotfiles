@@ -87,5 +87,20 @@ alias gMa="git commit --all --message"
 alias ga="git add -p"
 alias gA="git add -A"
 
+alias gr="git reset"
+alias gr1="git reset HEAD^"
+alias gr2="git reset HEAD^^"
+alias grh="git reset --hard"
+alias grh1="git reset HEAD^ --hard"
+alias grh2="git reset HEAD^^ --hard"
+
+alias gl="git log --pretty=history --decorate --date=short --graph"
+alias gll="gl --patch"
+
+alias gts="git stash save --include-untracked"
+alias gtl="git stash list"
+alias gta="git stash apply"
+alias gtp="git stash pop"
+
 alias gp="git push"
 alias gP="git push --all && git push --tags"

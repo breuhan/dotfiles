@@ -5,6 +5,7 @@
     show-refs = yes
     tab-size = 4
 [alias]
+    # nice additions
     go = "!f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
     amend = commit --amend
     this = !git init && git add . && git commit -m \"initial commit\"
@@ -18,29 +19,12 @@
     branches = branch -a
     remotes = remote -v
 
-    # log
-    l = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-    ll = !git l --patch
-
-    # reset commands
-    r = reset
-    r1 = reset HEAD^
-    r2 = reset HEAD^^
-    rh = reset --hard
-    rh1 = reset HEAD^ --hard
-    rh2 = reset HEAD^^ --hard
-
-    # stash
-    sl = stash list
-    sa = stash apply
-    ss = stash save
-
     # merge
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [pretty]
     changelog = * %s
-    history = %C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)
+    history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
 [color]
     branch = auto
     diff = auto
