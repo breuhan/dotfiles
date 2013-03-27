@@ -1,5 +1,6 @@
 *.py[co]
 .pip/download_cache
+.pip/pip.log
 
 .DS_Store
 
