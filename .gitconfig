@@ -90,3 +90,5 @@
     browse = yes
 [pull]
 	rebase = true
+[diff]
+	algorithm = patience
