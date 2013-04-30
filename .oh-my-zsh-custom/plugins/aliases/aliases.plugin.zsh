@@ -75,7 +75,9 @@ done
 # Some git shortcuts
 alias gc="git checkout"
 alias gd="git diff"
+alias gds="git diff --stat"
 alias gD="git diff --cached"
+alias gDs="git diff --cached --stat"
 alias gl="git l"
 alias gs="git status --short --branch"
 
@@ -102,8 +104,8 @@ alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtp="git stash pop"
 
-alias gu="git pull"
-alias gU="git pull --no-rebase"
+alias gu="git pull && [ -f .gitfat ] && git fat pull"
+alias gU="git pull --no-rebase && [ -f .gitfat ] && git fat pull"
 
 alias gp="git push"
-alias gP="git push --all && git push --tags"
+alias gP="git push --all && git push --tags && [ -f .gitfat ] && git fat push"
