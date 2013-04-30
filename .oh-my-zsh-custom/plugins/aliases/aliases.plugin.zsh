@@ -73,36 +73,41 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # Some git shortcuts
+#
+# hint: the second char (the one after the small "g" for git) is in UPPER CASE?
+#       WARNING! you're dealing with the _dangerous_ version of the lower case
+#       version. for example "ga" is quite safe but "gA" is not.
 alias gc="git checkout"
 alias gd="git diff"
 alias gds="git diff --stat"
 alias gD="git diff --cached"
 alias gDs="git diff --cached --stat"
-alias gl="git l"
 alias gs="git status --short --branch"
 
 alias gm="git commit --verbose"
 alias gM="git commit --message"
-alias gma="git commit --all --verbose"
-alias gMa="git commit --all --message"
+alias gmA="git commit --all --verbose"
+alias gMA="git commit --all --message"
 
-alias ga="git add -p"
-alias gA="git add -A"
+alias ga="git add --patch"
+alias gA="git add --all"
 
 alias gr="git reset"
 alias gr1="git reset HEAD^"
 alias gr2="git reset HEAD^^"
-alias grh="git reset --hard"
-alias grh1="git reset HEAD^ --hard"
-alias grh2="git reset HEAD^^ --hard"
+alias gR="git reset --hard"
+alias gR1="git reset HEAD^ --hard"
+alias gR2="git reset HEAD^^ --hard"
 
 alias gl="git log --pretty=history --decorate --date=short --graph"
-alias gll="gl --patch"
+alias gL="gl --patch"
+# addition to be compatible with the filesystem "l" and "ll"
+alias gll="gL"
 
-alias gts="git stash save --include-untracked"
-alias gtl="git stash list"
-alias gta="git stash apply"
-alias gtp="git stash pop"
+alias gss="git stash save --include-untracked"
+alias gsl="git stash list"
+alias gsa="git stash apply"
+alias gsA="git stash pop"
 
 alias gu="git pull && [ -f .gitfat ] && git fat pull"
 alias gU="git pull --no-rebase && [ -f .gitfat ] && git fat pull"
