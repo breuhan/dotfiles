@@ -1,0 +1,14 @@
+[core]
+	excludesfile = /Users/andybreuhan/.gitignore
+	editor = /usr/bin/vim
+[user]
+	name = cylonbrain
+	email = cylonbrain@gmail.com
+[alias]
+	wdiff = diff --color-words
+[mergetool]
+	keepBackup = true
+[gui]
+	recentrepo = /Users/andybreuhan/doom3.gpl
+[push]
+	default = simple
