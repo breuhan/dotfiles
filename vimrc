@@ -52,15 +52,15 @@ function! Tab_Or_Complete()
 
 function! ResCur()
 	if line("'\"") <= line("$")
-	normal! g`"
-	return 1
+	  normal! g`"
+	  return 1
 	endif
-	endfunction
+endfunction
 
-	augroup resCur
+augroup resCur
 	autocmd!
-autocmd BufWinEnter * call ResCur()
-	augroup END
+  autocmd BufWinEnter * call ResCur()
+augroup END
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -79,9 +79,6 @@ set hlsearch
 
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Highlight characters behind the 80 chars margin
-:au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
 
 " Disable code folding
 set nofoldenable
