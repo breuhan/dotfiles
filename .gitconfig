@@ -1,0 +1,37 @@
+[core]
+	pager = less -R --quit-if-one-screen
+    excludesfile = ~/.gitexcludes
+    attributesfile = ~/.gitattributes
+    autocrlf = false
+    whitespace = tab-in-indent,trailing-space,cr-at-eol
+    editor = /usr/bin/vim
+    logallrefupdates = true
+[user]
+	name = cylonbrain
+	email = cylonbrain@gmail.com
+[tig]
+    show-refs = yes
+    tab-size = 4
+[pretty]
+    changelog = * %s
+    history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+	 ui = 1
+[alias]
+	wdiff = diff --color-words
+[mergetool]
+	keepBackup = true
+[gui]
+	recentrepo = /Users/andybreuhan/doom3.gpl
+[push]
+	default = upstream
+[help]
+    autocorrect = 1
+[pull]
+	rebase = true
+[diff]
+	algorithm = patience
