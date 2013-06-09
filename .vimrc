@@ -38,11 +38,6 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 nmap <leader>L mQviwU`Q
 nmap <leader>l mQviwu`Q
 
-" tries to avoid those annoying "hit enter to continue" messages
-" if it still doesn't help with certain commands, add a second <cr>
-" at the end of the map command
-set shortmess=a
-
 " Look for tag def in a "tags" file in the dir of the current file, then for
 " that same file in every folder above the folder of the current file, until
 " the root.
@@ -136,10 +131,6 @@ set expandtab       " Insert spaces instead of <Tab> in the insert mode
 set smartindent
 set autoindent
 
-set ic " ignore case in search
-set incsearch " incremental search
-set hlsearch " highlight search results
-set smartcase " ignore case when lowercase
 set number " Line numbers
 set textwidth=0 " Do not wrap words (insert)
 set nowrap              " Do not wrap words (view)
@@ -147,8 +138,6 @@ set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set ruler               " line and column number of the cursor position
 set wildmenu " enhanced command completion
-set autowriteall " Automatically save before commands like :next and :make
-set autoread " automatically read feil that has been changed on disk and doesn't have changes in vim
 " Whitespace stuff
 set tabstop=4
 set shiftwidth=4
@@ -252,9 +241,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " completion options so you can complete the file without further keys
 set wildmode=longest,list,full
 set wildmenu            " completion with menu
-" Search related settings
-set incsearch
-set hlsearch
 
 " The "longest" option makes completion insert the longest prefix of all
 " the possible matches; see :h completeopt
@@ -271,8 +257,8 @@ set nofoldenable
 " OSX
 set wildignore+=*DS_Store*
 " Directories for swp files
-set backupdir=~/.vimbackup
-set directory=~/.vimbackup
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 
 " Files we're never gonna use vim for
 set wildignore+=*.png,*.jpg,*.gif
@@ -301,6 +287,7 @@ set wildignore+=*.pyc,*.pyo
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
 " NodeJS
 set wildignore+=*/node_modules/**
 
@@ -507,9 +494,6 @@ Bundle 'henrik/vim-indexed-search'
 Bundle 'ZoomWin'
 nmap <Leader>z <c-w>o
 
-" Extended % matching
-Bundle 'matchit.zip'
-
 " Graphical undo helper
 Bundle 'Gundo'
 nmap <Leader>U :GundoToggle<CR>
@@ -524,12 +508,6 @@ augroup Binary
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
 augroup END
-
-" Bundle "scrooloose/syntastic"
-" let g:syntastic_error_symbol = '✗'
-" let g:syntastic_warning_symbol = '⚠'
-" let g:syntastic_auto_jump=1
-" set statusline+=%{SyntasticStatuslineFlag()}
 
 Bundle 'Valloric/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
