@@ -20,11 +20,11 @@
     diff = auto
     interactive = auto
     status = auto
-	 ui = 1
+	ui = 1
 [alias]
 	wdiff = diff --color-words
 [mergetool]
-	keepBackup = true
+	keepBackup = false
 [gui]
 	recentrepo = /Users/andybreuhan/doom3.gpl
 [push]

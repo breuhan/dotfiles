@@ -4,8 +4,8 @@ export PATH=$PATH:/usr/local/texlive/2012basic/bin/x86_64-darwin
 export PATH=$PATH:/Users/andybreuhan/Dropbox/Programmierung/bin
 export PATH=$PATH:$HOME/Source/omnetpp-4.3/bin
 
-export PATH=/Developer/NVIDIA/CUDA-5.0/bin:$PATH
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.0/lib:$DYLD_LIBRARY_PATH
+export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 
 alias itunespush="rsync -avz --delete /Volumes/Daten/Music/iTunes/ macmini.home.breuhan.de:'/Volumes/Time\ Machine/iTunes/'"
 alias itunespull="rsync -avz --delete macmini.home.breuhan.de:'/Volumes/Time\ Machine/iTunes/' /Volumes/Daten/Music/iTunes/"
