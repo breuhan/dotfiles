@@ -6,7 +6,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh/oh-my-zsh-custom
 ZSH_THEME_PREFIX_OSX=1
 ZSH_THEME_PREFIX_ROOT=1
 ZSH_THEME_USE_RPROMPT=1
-ZSH_THEME="aussiegeek"
+ZSH_THEME="dpoggi"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -49,8 +49,7 @@ plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
 plugins=($plugins python aliases monkey history encode64)
 
 # -> Only completion
-# TODO: npm temporary disabled for speed
-plugins=($plugins redis-cli bundler pip vagrant gem git-flow)
+plugins=($plugins redis-cli bundler pip vagrant npm git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
