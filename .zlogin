@@ -2,6 +2,7 @@ export PATH=~/.homebrew/bin:~/.homebrew/sbin:$PATH
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:/usr/local/texlive/2012basic/bin/x86_64-darwin
 export PATH=$PATH:/Users/andybreuhan/Dropbox/Programmierung/bin
+export PATH=$PATH:$HOME/omnetpp-4.3/bin
 export PATH=$PATH:$HOME/Source/omnetpp-4.3/bin
 
 export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
