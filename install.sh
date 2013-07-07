@@ -37,57 +37,65 @@ for dir in $(ls -a1); do
 done
 
 ## Ruby
-echo ">> Ruby"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#echo ">> Ruby"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 # rbenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
-git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-(cd $HOME/.rbenv/plugins/ruby-build && git pull)
-rbenv rehash
+#git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+#(cd $HOME/.rbenv/plugins/ruby-build && git pull)
+#rbenv rehash
 
-rbenv install 2.0.0-p0
-rbenv global 2.0.0-p0
-rbenv shell 2.0.0-p0
-rbenv rehash
+#rbenv install 2.0.0-p0
+#rbenv global 2.0.0-p0
+#rbenv shell 2.0.0-p0
+#rbenv rehash
 
-gem install bundler
-rbenv rehash
+#gem install bundler
+#rbenv rehash
 
-bundle
-rbenv rehash
+#bundle
+#rbenv rehash
 
 ## Python
-echo ">> Python"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+#echo ">> Python"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
 
-pyenv install 2.7.3
-pyenv install 3.3.0
-pyenv install pypy-1.9
-pyenv global 2.7.3
-pyenv shell 2.7.3
-pyenv rehash
+#pyenv install 2.7.3
+#pyenv install 3.3.0
+#pyenv install pypy-1.9
+#pyenv global 2.7.3
+#pyenv shell 2.7.3
+#pyenv rehash
 
 # pyenv plugins (can't add submodule within a subdmodule, sadly no *inception*)
-git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
-(cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
-pyenv rehash
+#git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+#(cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
+#pyenv rehash
 
 ## NodeJS
-echo ">> Node"
-source $HOME/.nvm/nvm.sh
-nvm install v0.8.16
-nvm alias default v0.8.16
+#echo ">> Node"
+#source $HOME/.nvm/nvm.sh
+#nvm install v0.8.16
+#nvm alias default v0.8.16
 
 ## homebrew
-echo ">> Homebrew"
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-./.brew
+if [ "$(uname)" == "Darwin" ]; then
+    echo ">> Homebrew"
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    ./.brew
+else
+    echo ">> skipping Homebrew"
+fi
 
 ## OSX settings
-echo ">> OSX settings"
-./.osx
+if [ "$(uname)" == "Darwin" ]; then
+    echo ">> OSX settings"
+    ./.osx
+else
+    echo ">> skipping OSX settings"
+fi
 
 ## Install vim plugins
 echo ">> Vim plugins"

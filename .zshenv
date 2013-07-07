@@ -2,3 +2,5 @@
 echo "$PATH" | grep -q "/usr/local/bin"     && export PATH="/usr/local/bin:$PATH"
 echo "$PATH" | grep -q "/usr/local/sbin"    && export PATH="/usr/local/sbin:$PATH"
 echo "$PATH" | grep -q "/usr/local/git/bin" && export PATH="/usr/local/git/bin:$PATH"
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
