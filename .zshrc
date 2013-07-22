@@ -43,7 +43,7 @@ plugins=(gnu-utils osx-bindkey brew-fixes)
 plugins=($plugins awsenv nvm rbenv pyenv)
 
 # -> Functions
-plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
+plugins=($plugins extract fastgit terminate_vbox scm_update)
 
 # -> Only some aliases
 plugins=($plugins python aliases monkey history encode64)
