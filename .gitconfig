@@ -1,5 +1,5 @@
 [core]
-	pager = less -R --quit-if-one-screen
+	pager = less -R
     excludesfile = ~/.gitexcludes
     attributesfile = ~/.gitattributes
     autocrlf = false
