@@ -5,23 +5,13 @@
     show-refs = yes
     tab-size = 4
 [alias]
-    # nice additions
-    go = "!f(){ git checkout $(git branch -r | grep $1 | cut -d'/' -f2-); }; f"
-    amend = commit --amend
-    this = !git init && git add . && git commit -m \"initial commit\"
-    rm-all  = !git ls-files -z --deleted | xargs -0 git rm
-    ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
-    grep = grep -Ii
-    lasttag = describe --tags --abbrev=0
+    # grep in binary files is .. well .. who does this?
+    grep = grep -I
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
     remotes = remote -v
-
-    # merge
-    ours = "!f() { git co --ours $@ && git add $@; }; f"
-    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [pretty]
     changelog = * %s
     history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
