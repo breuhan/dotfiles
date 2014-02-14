@@ -15,7 +15,7 @@ CASE_SENSITIVE="true"
 DISABLE_LS_COLORS="false"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Make vim the default editor
 export EDITOR="vim"
@@ -59,3 +59,8 @@ unsetopt correct_all
 # Load and run compinit
 autoload -U compinit
 compinit -i
+
+
+ulimit -n 1024
+HISTSIZE=10000
+export HISTCONTROL=erasedups
