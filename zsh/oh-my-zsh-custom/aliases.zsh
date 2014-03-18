@@ -1,7 +1,8 @@
 alias ll='ls -la'
 alias lh='ls -lah'
 alias ...='cd ../..'
-
+alias rcp='rsync -avP --progress'
+alias rmv='rsync -avP --progress --remove-source-files'
 
 export PATH=~/.homebrew/bin:~/.homebrew/sbin:$PATH
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
