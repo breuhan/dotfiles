@@ -1,14 +1,12 @@
-## Make sure we’re using the latest Homebrew
+# ---- BREW
 update
-
-## Upgrade any already-installed formulae
 upgrade
+cleanup
 
 install aespipe
 install ant
 install autoconf
 install automake
-install brew-cask
 install coreutils
 install ctags
 install ctags-exuberant
@@ -66,9 +64,6 @@ install xz
 install zopfli
 install zsh --disable-etcdir
 
-# Remove outdated versions from the cellar
-cleanup
-
 # !! NOTE !!
 # required to enable all features of htop
 # sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2/bin/htop
@@ -79,3 +74,33 @@ cleanup
 # install ack
 # TODO: ensure zsh loads this
 # /usr/local/share/zsh/site-functions/_ack
+
+# ---- BREW CASK
+tap phinze/homebrew-cask
+install brew-cask
+cask cleanup
+
+cask install adium
+cask install audacity
+cask install bittorrent-sync
+cask install caffeine
+cask install charles
+cask install dropbox
+cask install firefox
+cask install flash
+cask install google-chrome
+cask install imagealpha
+cask install imageoptim
+cask install istat-menus
+cask install iterm2
+cask install java
+cask install jumpcut
+cask install mplayerx
+cask install onepassword
+cask install opera
+cask install skype
+cask install spotify
+cask install the-unarchiver
+cask install tor-browser
+cask install utorrent
+cask install vlc
