@@ -4,3 +4,6 @@
 [submodule "secret-files"]
 	path = secret-files
 	url = git://github.com/michaelcontento/secret-files.git
+[submodule ".antigen"]
+	path = .antigen
+	url = https://github.com/zsh-users/antigen.git
