@@ -103,3 +103,6 @@ chsh -s /bin/zsh
 
 ## Done! :D
 echo ">> Done"
+
+## Fix some libs
+ln -s ./freetype2 /usr/local/include/freetype

@@ -42,21 +42,21 @@ setopt NOCLOBBER
 
 # Which plugins would you like to load?
 # -> Special stuff for OSX
-plugins=(gnu-utils osx-bindkey brew-fixes)
+plugins=(osx-bindkey brew-fixes)
 
 # -> PATH modifications
 # TODO: virtualenv temporary disabled for speed
-plugins=($plugins awsenv nvm rbenv pyenv)
+plugins=($plugins awsenv nvm rbenv pyenv path)
 
 # -> Functions
-plugins=($plugins lastcd extract fastgit terminate_vbox scm_update)
+plugins=($plugins lastcd fastgit terminate_vbox scm_update)
 
 # -> Only some aliases
-plugins=($plugins python aliases monkey history encode64)
+plugins=($plugins python aliases monkey )
 
 # -> Only completion
 # TODO: npm temporary disabled for speed
-plugins=($plugins redis-cli bundler pip vagrant gem git-flow)
+plugins=($plugins redis-cli vagrant )
 
 source $ZSH/oh-my-zsh.sh
 

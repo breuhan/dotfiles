@@ -30,7 +30,7 @@
     tool = vimdiff
     log = true
 [core]
-    pager = less -R --quit-if-one-screen
+    pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --line-numbers --no-init
     excludesfile = ~/.gitexcludes
     attributesfile = ~/.gitattributes
     autocrlf = input

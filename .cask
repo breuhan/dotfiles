@@ -6,31 +6,26 @@ function installcask() {
         brew cask install "${@}" 2> /dev/null
 }
 
-installcask dropbox
 installcask adium
 installcask audacity
 installcask bittorrent-sync
 installcask caffeine
-installcask crashlytics
-installcask firefox
-installcask opera
-installcask skype
-installcask spotify
-installcask utorrent
-installcask vagrant
-installcask gitx
-installcask istat-menus
-installcask java
+installcask dropbox
 installcask flash
-installcask jumpcut
-installcask mplayerx
-installcask onepassword
 installcask google-chrome
 installcask imagealpha
 installcask imageoptim
+installcask istat-menus
 installcask iterm2
+installcask java
+installcask jumpcut
+installcask mplayerx
+installcask onepassword
+installcask skype
+installcask spotify
 installcask the-unarchiver
 installcask tor-browser
 installcask ukelele
-installcask virtualbox
+installcask utorrent
+installcask vagrant
 installcask vlc
