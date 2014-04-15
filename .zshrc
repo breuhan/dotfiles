@@ -1,64 +1,47 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+source $HOME/.antigen/antigen.zsh
 
-# Set name of the theme to load.
-ZSH_THEME_PREFIX_OSX=1
-ZSH_THEME_PREFIX_ROOT=1
-ZSH_THEME_USE_RPROMPT=1
-ZSH_THEME="miloshadzic"
+antigen use oh-my-zsh
 
-# Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
+antigen bundle atom
+antigen bundle brew
+antigen bundle brew-cask
+antigen bundle colored-man
+antigen bundle command-not-found
+antigen bundle dirpersist
+antigen bundle emoji-clock
+antigen bundle encode64
+antigen bundle extract
+antigen bundle gem
+antigen bundle git-extras
+antigen bundle gnu-utils
+antigen bundle history
+antigen bundle iwhois
+antigen bundle jsontools
+antigen bundle nvm
+antigen bundle pep8
+antigen bundle pip
+antigen bundle postgres
+antigen bundle pyenv
+antigen bundle pylint
+antigen bundle python
+antigen bundle rbenv
+antigen bundle redis-cli
+antigen bundle rsync
+antigen bundle sudo
+antigen bundle vundle
+antigen bundle xcode
 
-# Disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+antigen bundle michaelcontento/zsh-aliases
+antigen bundle michaelcontento/zsh-config
+antigen bundle michaelcontento/zsh-fastgit
+antigen bundle michaelcontento/zsh-lastcd
+antigen bundle michaelcontento/zsh-monkey
+antigen bundle michaelcontento/zsh-osx_bindkey
+antigen bundle michaelcontento/zsh-path
+antigen bundle michaelcontento/zsh-terminate_vbox
 
-# Enable colors in ls
-DISABLE_LS_COLORS="false"
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+antigen theme miloshadzic
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Make vim the default editor
-export EDITOR="vim"
-export USE_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
-
-# Say how long a command took, if it took more than 30 seconds
-export REPORTTIME=30
-
-# Don’t write over existing files with >, use >! instead
-setopt NOCLOBBER
-
-# Which plugins would you like to load?
-# -> Special stuff for OSX
-plugins=(osx-bindkey brew-fixes)
-
-# -> PATH modifications
-# TODO: virtualenv temporary disabled for speed
-plugins=($plugins awsenv nvm rbenv pyenv path)
-
-# -> Functions
-plugins=($plugins lastcd fastgit terminate_vbox scm_update)
-
-# -> Only some aliases
-plugins=($plugins python aliases monkey )
-
-# -> Only completion
-# TODO: npm temporary disabled for speed
-plugins=($plugins redis-cli vagrant )
-
-source $ZSH/oh-my-zsh.sh
-
-# Disable autocorrect complete
-unsetopt correct_all
+antigen apply
