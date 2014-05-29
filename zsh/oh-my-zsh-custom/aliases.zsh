@@ -18,7 +18,7 @@ alias iphotopush="rsync -aXvz --delete --iconv=UTF-8-MAC,UTF-8 /Users/andybreuha
 alias iphotopull="rsync -avz --delete avoton.home.breuhan.de:'/tank/Andy/Bibliothek\ iPhoto/' /Users/andybreuhan/Pictures/Bibliothek\ iPhoto/ "
 alias hidrivepush="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/MiniDrive/Dateien/.rsync_exclude --iconv=UTF-8-MAC,UTF-8 /MiniDrive/Dateien/ cylonbrain@rsync.hidrive.strato.com:'/users/cylonbrain/Dateien/'"
 alias hidrivepull="rsync -av --progress --delete --iconv=UTF-8-MAC,UTF-8 cylonbrain@rsync.hidrive.strato.com:'/users/cylonbrain/Dateien/' /MiniDrive/Dateien/"
-alias dateienpush="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/MiniDrive/Dateien/.rsync_exclude /MiniDrive/Dateien/ avoton.home.breuhan.de:'/tank/Andy/Dateien/'"
+alias dateienpush="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/MiniDrive/Dateien/.rsync_exclude --iconv=UTF-8-MAC,UTF-8 /MiniDrive/Dateien/ avoton.home.breuhan.de:'/tank/Andy/Dateien/'"
 
 alias hawkthorne="cd Source/hawkthorne-journey/ && git pull && make && open build/hawkthorne.love && cd -"
 alias sublime="open -a \"Sublime Text 2\""
