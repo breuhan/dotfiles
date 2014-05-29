@@ -36,7 +36,7 @@
     tool = vimdiff
     log = true
 [push]
-	default = upstream
+    default = upstream
 [help]
     autocorrect = 1
 [pull]
