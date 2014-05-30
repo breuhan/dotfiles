@@ -154,7 +154,7 @@ Bundle 'tpope/vim-git'
 
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
-set shell=/bin/bash     " use bash for shell commands
+set shell=/bin/sh     " use bash for shell commands
 filetype plugin on
 filetype indent on
 
