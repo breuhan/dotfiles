@@ -563,6 +563,4 @@ highlight clear SignColumn
 " au FocusLost * :set nu
 " au FocusGained * :set rnu
 
-Bundle 'Lokaltog/vim-easymotion'
-
 Bundle 'hwrod/interactive-replace'

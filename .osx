@@ -68,7 +68,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
-defaults write com.apple.finder ShowStatusBar -bool true 
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -280,7 +280,7 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "Dock" \
-        "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal" \
+        "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
         "Transmission" "Twitter" "iCal"; do
         killall "${app}" > /dev/null 2>&1
 done
