@@ -5,10 +5,8 @@ From your homedirectory (on Linux/Mac OSX):
 * `cd ~`
 * `git clone https://github.com/cylonbrain/dotfiles.git ~/.dotfiles`
 * `cd .dotfiles`
-* `chmod +x makesymlinks.sh`
-* `./makesymlinks.sh`
-* `git submodule init`
-* `git submodule update`
+* `chmod +x install.sh`
+* `./install.sh`
 
 ## Update
 * `git pull`
