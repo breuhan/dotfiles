@@ -1,5 +1,8 @@
 source $HOME/.dotfiles/antigen/antigen.zsh
 
+# automatically add custom aliases
+ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
+
 antigen use oh-my-zsh
 
 antigen bundle atom
@@ -61,11 +64,6 @@ export REPORTTIME=30
 
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
-
-# Load and run compinit
-autoload -U compinit
-compinit -i
-
 
 ulimit -n 1024
 HISTSIZE=10000
