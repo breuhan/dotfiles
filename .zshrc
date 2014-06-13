@@ -1,8 +1,5 @@
 source $HOME/.dotfiles/antigen/antigen.zsh
 
-# automatically add custom aliases
-ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
-
 antigen use oh-my-zsh
 
 antigen bundle atom
@@ -43,6 +40,8 @@ antigen bundle michaelcontento/zsh-path
 antigen bundle michaelcontento/zsh-terminate_vbox
 
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen bundle $HOME/.dotfiles/zsh-custom
 
 antigen theme dpoggi
 
