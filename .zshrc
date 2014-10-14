@@ -25,7 +25,6 @@ antigen bundles <<EOBUNDLES
 	pyenv
 	pylint
 	python
-	rbenv
 	redis-cli
 	rsync
 	sudo
