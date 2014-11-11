@@ -66,6 +66,6 @@ export REPORTTIME=30
 setopt NOCLOBBER
 
 ulimit -n 1024
-HISTSIZE=10000
+export HISTSIZE=100000000
 export HISTCONTROL=erasedups
 

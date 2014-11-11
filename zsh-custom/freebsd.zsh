@@ -31,6 +31,12 @@ function ports-build {
   sudo portmaster --check-depends
 }
 
+function smartmon-all {
+    for i in {0..10}; do
+        echo "Disk ada$i" $SN $MD
+        sudo smartctl --all /dev/ada$i | grep "Device Model"
+    done
+}
 function identify-disks {
   i=0
   sleep 30
