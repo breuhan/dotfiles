@@ -29,20 +29,13 @@ antigen bundles <<EOBUNDLES
 	rsync
 	sudo
 	vundle
-	xcode
 EOBUNDLES
-
-antigen bundle michaelcontento/zsh-aliases
-antigen bundle michaelcontento/zsh-config
-antigen bundle michaelcontento/zsh-fastgit
-antigen bundle michaelcontento/zsh-monkey
-antigen bundle michaelcontento/zsh-osx_bindkey
-antigen bundle michaelcontento/zsh-path
-antigen bundle michaelcontento/zsh-terminate_vbox
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen bundle $HOME/.dotfiles/zsh-custom
+
+antigen bundle zsh-users/zsh-completions src
 
 antigen theme dpoggi
 
@@ -68,4 +61,4 @@ setopt NOCLOBBER
 ulimit -n 1024
 export HISTSIZE=100000000
 export HISTCONTROL=erasedups
-
+alias vim='nocorrect vim'

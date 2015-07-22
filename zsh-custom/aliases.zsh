@@ -3,11 +3,27 @@ alias lh='ls -lah'
 alias ...='cd ../..'
 alias rcp='rsync -avP --progress'
 alias rmv='rsync -avP --progress --remove-source-files'
+alias grep='grep --color'
+
+# - Detect newer versions of ls is installed (e.g. "brew install coreutils")
+# - Use "l" as short and "ll" as long version
+which -a ls | grep gls > /dev/null
+if [ $? -eq 0 ]; then
+    alias l="ls -lh --color=auto"
+    alias ll="ls -alh --color=auto"
+else
+    alias l="ls -lh -G"
+    alias ll="ls -alh -G"
+fi
+
+alias dud='du --max-depth=1 -h'
+alias duf='du -sh *'
 
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:/usr/local/texlive/2012basic/bin/x86_64-darwin
 export PATH=$PATH:$HOME/Dropbox/Programmierung/bin
+export PATH=$PATH:$HOME/bin
 
 export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
