@@ -40,4 +40,5 @@ alias hawkthorne="cd Source/hawkthorne-journey/ && git pull && make && open buil
 alias sublime="open -a \"Sublime Text 2\""
 
 alias gitgogo="git commit -m \"changes from $(uname -n) on $(date)\""
+alias gs="git status"
 alias defaultpermissions="find . -type d -print0 | xargs -0 chmod 0755 && find . -type f -print0 | xargs -0 chmod 0644"
