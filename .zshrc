@@ -3,10 +3,8 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-    atom
 	brew
 	brew-cask
-	colored-man
 	command-not-found
 	dirpersist
 	emoji-clock
@@ -41,24 +39,4 @@ antigen theme dpoggi
 
 antigen apply
 
-# Make vim the default editor
-export EDITOR="vim"
-export USE_EDITOR=$EDITOR
-export VISUAL=$EDITOR
 
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
-
-# Say how long a command took, if it took more than 30 seconds
-export REPORTTIME=30
-
-# Don’t write over existing files with >, use >! instead
-setopt NOCLOBBER
-
-ulimit -n 1024
-export HISTSIZE=100000000
-export HISTCONTROL=erasedups
-alias vim='nocorrect vim'
