@@ -21,3 +21,9 @@ export MANPAGER="less -X"
 # Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=20
 
+# Don’t write over existing files with >, use >! instead
+setopt NOCLOBBER
+ulimit -n 1024
+export HISTSIZE=100000000
+export HISTCONTROL=erasedups
+alias vim='nocorrect vim'

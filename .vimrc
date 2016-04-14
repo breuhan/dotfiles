@@ -564,3 +564,8 @@ highlight clear SignColumn
 " au FocusGained * :set rnu
 
 Bundle 'hwrod/interactive-replace'
+
+"Fuzzy file, buffer, mru, tag, etc finder.
+"http://kien.github.com/ctrlp.vim
+
+Bundle 'kien/ctrlp.vim'
