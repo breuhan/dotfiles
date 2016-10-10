@@ -29,8 +29,6 @@ antigen bundles <<EOBUNDLES
 	vundle
 EOBUNDLES
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen bundle $HOME/.dotfiles/zsh-custom
 
 antigen bundle zsh-users/zsh-completions src
