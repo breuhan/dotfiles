@@ -3,14 +3,10 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-	brew
-	brew-cask
 	command-not-found
 	dirpersist
-	emoji-clock
 	encode64
 	extract
-	gem
 	git-extras
 	gnu-utils
 	history
