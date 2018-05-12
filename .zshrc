@@ -3,6 +3,8 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
+    zsh-users/zsh-completions
+    git
 	command-not-found
 	dirpersist
 	encode64
