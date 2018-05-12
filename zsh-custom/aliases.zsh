@@ -32,7 +32,7 @@ alias itunespush="rsync -avz --delete $HOME/Music/iTunes/ avoton.home.breuhan.de
 alias itunespull="rsync -avz --delete avoton.home.breuhan.de:'/export/tank/Audio/iTunes/' $HOME/Music/iTunes/"
 alias iphotopush="rsync -avz --progress --delete --iconv=UTF-8-MAC,UTF-8 $HOME/Pictures/ avoton.home.breuhan.de:'/export/volatile/Andy/Bilder/'"
 alias iphotopull="rsync -avz --delete avoton.home.breuhan.de:'/export/volatile/Andy/Bilder/' $HOME/Pictures/"
-alias hidrivepush="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/Volumes/MiniDrive/Dateien/.rsync_exclude --iconv=UTF-8-MAC,UTF-8 /Volumes/MiniDrive/Dateien/ cylonbrain@rsync.hidrive.strato.com:'/users/cylonbrain/Dateien/'"
+alias hidrivepush="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/Volumes/MiniDrive/andybreuhan/Dokumente/.rsync_exclude --iconv=UTF-8-MAC,UTF-8 /Volumes/MiniDrive/andybreuhan/Dokumente/ cylonbrain@rsync.hidrive.strato.com:'/users/cylonbrain/Dateien/'"
 alias hidrivepull="rsync -av --progress --delete --iconv=UTF-8-MAC,UTF-8 cylonbrain@rsync.hidrive.strato.com:'/users/cylonbrain/Dateien/' /Volumes/MiniDrive/Dateien/"
 alias dateienpull="rsync -avzhPy --inplace --delete --delete-excluded --exclude-from=/Volumes/MiniDrive/Dateien/.rsync_exclude  avoton.home.breuhan.de:'/export/volatile/Andy/Dateien/'" /Volumes/MiniDrive/Dateien/
 
