@@ -417,8 +417,8 @@ set ruler            " Show the line and column number of the cursor
 set showcmd          " Show incomplete commands down the bottom
 set showmode         " Show current mode down the bottom
 set cul              " Highlight the current line
-" set background=dark  " Use the dark background color
-
+set background=dark  " Use the dark background color
+highlight Normal guibg=black guifg=white
 " Bundle 'altercation/vim-colors-solarized'
 " let g:solarized_termtrans=1
 " let g:solarized_contrast="high"

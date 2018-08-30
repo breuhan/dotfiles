@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/andybreuhan/.homebrew'
+let g:netrw_dirhist_2='/etc/periodic/weekly'
+let g:netrw_dirhist_3='/usr/local/etc/letsencrypt/keys'
+let g:netrw_dirhist_4='/etc/periodic'
