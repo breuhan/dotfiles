@@ -9,6 +9,7 @@
 [user]
 	name = cylonbrain
 	email = cylonbrain@gmail.com
+	signingkey = 69F2FBC3565E99C0C949654850310CF2B629B73C
 [tig]
     show-refs = yes
     tab-size = 4
@@ -43,3 +44,8 @@
 	rebase = true
 [diff]
 	algorithm = patience
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

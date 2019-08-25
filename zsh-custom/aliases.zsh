@@ -18,6 +18,7 @@ fi
 
 alias dud='du --max-depth=1 -h'
 alias duf='du -sh *'
+alias open=xdg-open
 
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
