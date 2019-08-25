@@ -149,7 +149,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'michaelcontento/Monkey-VIM'
 Bundle 'leshill/vim-json'
 Bundle 'mutewinter/nginx.vim'
-Bundle 'acustodioo/vim-tmux'
 Bundle 'tpope/vim-git'
 
 set viminfo='10,\"100,:20,%,n~/.viminfo
