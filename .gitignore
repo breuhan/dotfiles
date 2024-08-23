@@ -1,11 +1,3 @@
 .DS_Store
 
-# Keep some ssh stuff secret
-/.ssh/
-
-# Ignore all vundle bundles except vundle itself
-/.vim/bundle
-/.vim/backup
-!/.vim/bundle/vundle
-/.vim/ctrlp-cache
-/.vim/.netrwhist
+!*.secret

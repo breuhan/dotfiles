@@ -20,8 +20,6 @@ brew install zsh --disable-etcdir
 
 ## Ack
 brew install ack
-# TODO: ensure zsh loads this
-# /usr/local/share/zsh/site-functions/_ack
 
 ## Htop
 brew install htop

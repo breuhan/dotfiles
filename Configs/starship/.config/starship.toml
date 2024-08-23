@@ -1,0 +1,82 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = '$all$directory$character'
+
+[line_break]
+disabled = true
+
+[battery]
+disabled = true
+
+[buf]
+disabled = true
+
+[package]
+disabled = true
+
+[username]
+show_always = true
+disabled = false
+format = "[$user]($style)@"
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold green) "
+
+[directory]
+style = "blue"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+style = "bright-black"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+disabled = true
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+[os]
+disabled = false # Disabled by default
+
+[os.symbols]
+Arch = " "
+Linux = " "
+Macos = " "
+
+[rust]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"                                    # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[sudo]
+symbol = "sudo "

@@ -1,0 +1,62 @@
+[core]
+	pager = less -R
+    excludesfile = ~/.gitexcludes
+    attributesfile = ~/.gitattributes
+    autocrlf = false
+    whitespace = tab-in-indent,trailing-space,cr-at-eol,trailing-space,space-before-tab,cr-at-eol
+    editor = vim
+    logallrefupdates = true
+
+[user]
+	name = Andy Breuhan
+	email = abreuhan@ddn.com
+	signingkey = 69F2FBC3565E99C0C949654850310CF2B629B73C
+[tig]
+    show-refs = yes
+    tab-size = 4
+[alias]
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+	wdiff = diff --color-words
+[pretty]
+    changelog = * %s
+    history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[branch]
+    autosetupmerge = true
+    autosetuprebase = always
+[rebase]
+    stat = true
+	autoStash = true
+[merge]
+    tool = vimdiff
+    log = true
+[push]
+    default = upstream
+	autoSetupRemote = true
+[help]
+    autocorrect = 1
+[pull]
+	rebase = true
+[diff]
+	algorithm = patience
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+
