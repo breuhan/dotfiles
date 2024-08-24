@@ -185,9 +185,5 @@ cask 'hiddenbar'          # Hide / show annoying menubar icons
 cask 'keka'               # File archiver and extractor
 
 # Mac App Store Installs
-mas 'Icon Slate', id: 439697913
-mas 'Gifski', id: 1351639930
-mas 'Qi FM', id: 147969619
-mas 'ColorNoise', id: 1640045375
-mas 'Toggl Track: Hours & Time Log' id: 1291898086
+mas 'Slack', id: 803453959
 mas 'Xcode', id: 497799835
