@@ -2,3 +2,5 @@ ccase
 ouch
 suckit
 bws
+tuckr
+spellcheck

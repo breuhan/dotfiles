@@ -24,30 +24,14 @@ set -g fish_user_paths /opt/homebrew/opt/make/libexec/gnubin $fish_user_paths
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
-# PHP Laravel
-set -U fish_user_paths $HOME/.composer/vendor/bin $fish_user_paths
-
-# GO
-set -x GOPATH $HOME/.go
-set -x PATH $PATH $GOPATH/bin
-
 # Rust
 set -g fish_user_paths $HOME/.cargo/bin $fish_user_paths
 
-# NodeJS - PNPM
-set -gx PNPM_HOME $HOME/Library/pnpm
-set -gx PATH "$PNPM_HOME" $PATH
-
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # FZF and FD helpers for NeoVim
 set -x FZF_DEFAULT_COMMAND "fd --type f"
 set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
-# The next line updates PATH for Netlify's Git Credential Helper.
-test -f '/Users/ed/Library/Preferences/netlify/helper/path.fish.inc' && source '/Users/ed/Library/Preferences/netlify/helper/path.fish.inc'
 
 # # Docker
 # set -g fish_user_paths $HOME/.docker/bin $fish_user_paths

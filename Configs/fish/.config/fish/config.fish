@@ -1,4 +1,4 @@
-
+set -g fish_greeting
 
 ### start Prompt ###
 # Starship Prompt

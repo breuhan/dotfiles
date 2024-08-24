@@ -8,6 +8,19 @@ alias cp 'cp -Ri'
 alias mv 'mv -i'
 alias rm 'rm -i'
 
+# rsync shortcuts
+alias rcp 'rsync -avP --progress'
+alias rmv 'rsync -avP --progress --remove-source-files'
+
+
+# Git shortcuts
+alias gs 'git status'
+alias git-recursive-pull 'find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;'
+
+#permissions
+alias defaultpermissions 'find . -type d -print0 | xargs -0 chmod 0755 && find . -type f -print0 | xargs -0 chmod 0644'
+
+
 # Navigation
 alias .. 'cd ..'
 alias ... 'cd ../..'
@@ -30,5 +43,4 @@ alias projects 'cd ~/Developer'
 alias dev 'cd ~/Developer'
 alias work 'cd ~/Developer/work'
 alias dots 'cd ~/.dotfiles'
-alias cuts 'cd ~/.dotfiles; and eval $EDITOR .'
 
