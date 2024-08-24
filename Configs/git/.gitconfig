@@ -14,10 +14,10 @@
 [include]
   path = ~/.gitconfig.personal
 
-[includeIf "gitdir:~/Development/Personal/"]
+[includeIf "gitdir:~/Development/personal/"]
   path = ~/.gitconfig.personal
 
-[includeIf "gitdir:~/Development/Work/"]
+[includeIf "gitdir:~/Development/work/"]
   path = ~/.gitconfig.work
 
 [tig]

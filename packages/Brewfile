@@ -111,43 +111,18 @@ brew 'redis'                  # Redis database engine
 brew 'rust'                   # Rust language
 brew 'rustup-init'            # Rust version manager
 
-# DevOps SCMs and CI/CD Tools
-brew 'curlie'             # Command line HTTP client - Go
-brew 'httpie'             # Command line HTTP client
-brew 'docker'             # Containers
-brew 'orbstack'           # Docker image viewer
-brew 'doctl'              # DigitalOcean CLI
-brew 's3cmd'              # S3 command line tool
-brew 'monolith'           # Save web pages as single files - Rust
-
 # Development Utils
-brew 'gh'                 # Interact with GitHub PRs, issues, repos
-brew 'git-delta'          # Git diff viewer - Rust
-brew 'git-extras'         # Extra git commands for common tasks
-brew 'git-flow-avh'       # Git extensions to provide high-level repository operations
+
 brew 'git-lfs'            # Git Large File Storage
 brew 'gitkraken'          # Git client GUI
 brew 'gitkraken-cli'      # GitKraken CLI
-brew 'miniserve'          # Static file server
-brew 'mkcert'             # Local HTTPS development
-brew 'scc'                # Source code counter - Go
+
 brew 'tig'                # Text-mode interface for git
 brew 'watchexec'          # Watch a directory and execute a command when files change
-brew 'wget'               # wget with IRI support
-brew 'zaquestion/tap/lab' # GitLab CLI
 
-# Network and Security Testing
-brew 'bettercap'          # Network, scanning and moniroting
-brew 'nmap'               # Port scanning
-brew 'dnsmasq'            # DNS server used with Larvel Valet in ~/Sites
-brew 'nginx'              # Web server used with Larvel Valet in ~/Sites
-brew 'dog'                # DNS lookup client (better dig) - Rust
 
 # Security Utilities
-brew 'clamav'            # Open source virus scanning suite
 brew 'gnupg'             # GNU Privacy Guard
-brew 'lynis'             # Scan system for common security issues
-brew 'nss'               # Network Security Services
 brew 'openssl'           # Cryptography and SSL/TLS Toolkit
 brew 'ssh-copy-id'       # Copy SSH keys to remote hosts
 cask 'gpg-suite'         # GPG encryption files
@@ -156,22 +131,8 @@ cask 'gpg-suite'         # GPG encryption files
 # 3. Desktop Applications                                   #
 #############################################################
 
-# Creativity
-# cask 'adobe-creative-cloud' # Adobe Creative Cloud
-cask 'figma'                # Design tool
-cask 'nucleo'               # Icon manager
-cask 'principle'            # Prototyping tool
-cask 'affinity-designer'    # Illustrator replacement
-cask 'affinity-publisher'   # InDesign replacement
-cask 'affinity-photo'       # Photoshop replacement
 
 # Media
-cask 'boom'                 # Audio enhancer
-cask 'iina'                 # Media player
-cask 'kap'                  # Screen recorder
-cask 'keycastr'             # Display keystrokes
-brew 'pandoc'               # Universal file converter
-cask 'vlc'                  # Media player
 brew 'webp'                 # WebP image format
 
 # Communication and Chat
@@ -179,41 +140,29 @@ cask 'whatsapp'             # Chat app
 
 # Personal Applications
 cask 'bitwarden'            # Password manager
-cask 'clickup'              # Project management
-# cask 'notion'               # Notes and Tasks
-# cask 'obsidian'             # Note taking app
+cask 'obsidian'             # Note taking app
 
 # Utility Applications
 cask 'namechanger'          # Rename files in bulk
 cask 'onyx'                 # System maintenance
-cask 'qmk-toolbox'          # Keyboard firmware flashing - paired with https://usevia.app/
 
 # Browsers
-cask 'choosy'                    # Choose which browser to open links in - Default
-cask 'brave-browser'        # Brave browser - Primary
-# cask 'firefox@developer-edition' # Firefox Dev Edition
+cask 'brave-browser'         # Brave browser - Primary
 # cask 'google-chrome'             # Chrome browser
-cask 'responsively'              # Browser Testing
 
 # Fonts
 cask 'font-cascadia-code-nf'          # Dev/Terminal Font
-cask 'font-geist-mono-nerd-font'      # Dev/Terminal Font - Primary
-cask 'font-fira-code-nerd-font'       # Dev Font - Secondary
+cask 'font-fira-code-nerd-font'       # Dev Font
 cask 'font-inter'                     # Design font
 cask 'font-geist'                     # Design font
 
 # Development Apps
 cask 'alacritty'                      # GPU accelerated terminal - Rust
 cask 'cyberduck'                      # Mount remote storage locations
-cask 'dbngin'                         # Local MySQL database management
 cask 'devtoys'                        # Dev tools/utilities for Mac
 cask 'diffmerge'                      # File comparison tool
 cask 'gitkraken'                      # Git client GUI
 cask 'iterm2'                         # Better terminalemulator
-cask 'local'                          # Local WordPress development
-cask 'sequel-ace'                     # MySQL database management
-cask 'tableplus'                      # Database management
-cask 'typora'                         # Just a simple markdown editor
 cask 'visual-studio-code'             # Code editor - Default
 
 #############################################################
@@ -236,12 +185,9 @@ cask 'hiddenbar'          # Hide / show annoying menubar icons
 cask 'keka'               # File archiver and extractor
 
 # Mac App Store Installs
-mas 'ColorSlurp', id: 1287239339
 mas 'Icon Slate', id: 439697913
-mas 'Invoice Ninja V5', id: 1503970375
-mas 'Just Focus', id: 1142151959
 mas 'Gifski', id: 1351639930
 mas 'Qi FM', id: 147969619
 mas 'ColorNoise', id: 1640045375
 mas 'Toggl Track: Hours & Time Log' id: 1291898086
-#mas 'Xcode', id: 497799835
+mas 'Xcode', id: 497799835
