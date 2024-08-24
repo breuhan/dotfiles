@@ -1,9 +1,9 @@
 [core]
-	pager = less -R
+    pager = less -R
     excludesfile = ~/.gitexcludes
     attributesfile = ~/.gitattributes
     autocrlf = false
-    whitespace = tab-in-indent,trailing-space,cr-at-eol,trailing-space,space-before-tab,cr-at-eol
+    whitespace = trailing-space,space-before-tab
     editor = vim
     logallrefupdates = true
 
@@ -11,6 +11,15 @@
 	name = Andy Breuhan
 	email = abreuhan@ddn.com
 	signingkey = 69F2FBC3565E99C0C949654850310CF2B629B73C
+[include]
+  path = ~/.gitconfig.personal
+
+[includeIf "gitdir:~/Development/Personal/"]
+  path = ~/.gitconfig.personal
+
+[includeIf "gitdir:~/Development/Work/"]
+  path = ~/.gitconfig.work
+
 [tig]
     show-refs = yes
     tab-size = 4
@@ -19,7 +28,7 @@
     tags = tag -l
     branches = branch -a
     remotes = remote -v
-	wdiff = diff --color-words
+    wdiff = diff --color-words
 [pretty]
     changelog = * %s
     history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
@@ -34,7 +43,7 @@
     autosetuprebase = always
 [rebase]
     stat = true
-	autoStash = true
+    autoStash = true
 [merge]
     tool = vimdiff
     log = true
@@ -59,4 +68,7 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
-
+[fetch]
+	prune = true
+[apply]
+	whitespace = fix
