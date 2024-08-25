@@ -23,9 +23,6 @@ tap 'buo/cask-upgrade' # Upgrade casks
 tap 'clementtsang/bottom' # Resource monitor (better top) - Rust
 tap 'eddieantonio/eddieantonio' #
 tap 'github/gh' # Interact with GitHub PRs, issues, repos
-tap 'homebrew/cask-drivers' # for drivers
-tap 'homebrew/cask-fonts' # for fonts
-tap 'homebrew/cask-versions'
 tap 'teamookla/speedtest'   # Command line speed test utility
 
 #############################################################
@@ -83,7 +80,6 @@ brew 'bmon'         # Bandwidth utilization monitor
 brew 'bottom'       # Resource monitor (better top) - Rust
 brew 'ctop'         # Docker Container metrics and monitoring - Go
 brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
-brew 'duf'          # Get info on mounted disks (better df) - Go
 brew 'procs'        # Advanced process viewer (better ps) - Rust
 
 # CLI Productivity Apps
@@ -105,9 +101,8 @@ brew 'neofetch'     # Show system data and ditstro info
 #############################################################
 
 # Development Langs, Compilers, Package Managers and SDKs
-brew 'postgresql@14'          # PostgreSQL database engine
 brew 'python3'                # Python 3
-brew 'redis'                  # Redis database engine
+
 brew 'rust'                   # Rust language
 brew 'rustup-init'            # Rust version manager
 
@@ -135,11 +130,7 @@ cask 'gpg-suite'         # GPG encryption files
 # Media
 brew 'webp'                 # WebP image format
 
-# Communication and Chat
-cask 'whatsapp'             # Chat app
-
 # Personal Applications
-cask 'bitwarden'            # Password manager
 cask 'obsidian'             # Note taking app
 
 # Utility Applications
@@ -187,3 +178,5 @@ cask 'keka'               # File archiver and extractor
 # Mac App Store Installs
 mas 'Slack', id: 803453959
 mas 'Xcode', id: 497799835
+mas 'WhatsApp', id: 1147396723
+mas 'Bitwarden', id: 1352778147
