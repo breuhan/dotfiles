@@ -4,6 +4,7 @@ function smartmon-all {
         sudo smartctl --all $disk | grep "Device Model"
     done
 }
+
 function identify-disks {
   i=0
   sleep 30

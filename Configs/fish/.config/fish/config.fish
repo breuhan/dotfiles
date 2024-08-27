@@ -1,3 +1,5 @@
+direnv hook fish | source
+
 set -g fish_greeting
 
 ### start Prompt ###
@@ -5,7 +7,11 @@ set -g fish_greeting
 function starship_transient_prompt_func
   starship module character
 end
-starship init fish | source
+
+if type -q starship
+  starship init fish | source
+else
+end 
 
 # OH My Posh Prompt
 # oh-my-posh init fish --config ~/.config/starship-ish.omp.json| source
