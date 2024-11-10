@@ -30,3 +30,6 @@ alias reload="source ~/.zshrc"
 
 alias dssh='sshpass -f ~/.dotfiles/exapasswd.secret ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias dscp='sshpass -f ~/.dotfiles/exapasswd.secret  scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+
+alias scid='ssh-copy-id'
+

@@ -9,10 +9,6 @@ set -e
 PLATFORM=$(uname)
 ARCH=$(uname -m)
 
-
-
-
-
 if [ -f $TUCKR_EXEC ];
 then
   echo Running precompiled tuckr: $TUCKR_EXEC

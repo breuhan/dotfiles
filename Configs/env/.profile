@@ -21,7 +21,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export LD_LIBRARY_PATH=/opt/rocm/hsa:$LD_LIBRARY_PATH
 
-
 export PATH=$PATH:/opt/rocm/hip/bin/
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/bin

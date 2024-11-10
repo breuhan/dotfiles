@@ -1,5 +1,7 @@
 .DS_Store
 
-!*.secret
+*.secret
+
+Configs/ssh/.ssh/
 
 **/.config/fish/fish_variables
