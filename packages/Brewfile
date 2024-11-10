@@ -65,8 +65,6 @@ brew 'rsync'        # Fast incremental file transfer
 brew 'sd'           # RegEx find and replace (better sed) - Rust
 
 # CLI Image Processing and Compression
-brew 'unrar'              # Unpack .rar files
-brew 'gdk-pixbuf'         # Image loading library
 brew 'graphicsmagick'     # Image manipulation
 brew 'imagemagick'        # Image manipulation
 brew 'jpegoptim'          # JPEG image compression
@@ -95,7 +93,6 @@ brew 'tealdeer'     # Read cheat sheets (better tldr) - Rust
 
 # CLI Misc
 brew 'figlet'       # Output text as big ASCII art text
-brew 'neofetch'     # Show system data and ditstro info
 #############################################################
 # 2. Software / Web Development                             #
 #############################################################
@@ -104,14 +101,10 @@ brew 'neofetch'     # Show system data and ditstro info
 brew 'python3'                # Python 3
 
 brew 'rust'                   # Rust language
-brew 'rustup-init'            # Rust version manager
+brew 'rustup'            # Rust version manager
 
 # Development Utils
-
 brew 'git-lfs'            # Git Large File Storage
-brew 'gitkraken'          # Git client GUI
-brew 'gitkraken-cli'      # GitKraken CLI
-
 brew 'tig'                # Text-mode interface for git
 brew 'watchexec'          # Watch a directory and execute a command when files change
 
@@ -132,10 +125,8 @@ brew 'webp'                 # WebP image format
 
 # Personal Applications
 cask 'obsidian'             # Note taking app
-
-# Utility Applications
-cask 'namechanger'          # Rename files in bulk
-cask 'onyx'                 # System maintenance
+cask 'blender'              # 3D creation suite
+cask 'speedcrunch'          # better calculator
 
 # Browsers
 cask 'brave-browser'         # Brave browser - Primary
@@ -148,26 +139,13 @@ cask 'font-inter'                     # Design font
 cask 'font-geist'                     # Design font
 
 # Development Apps
-cask 'alacritty'                      # GPU accelerated terminal - Rust
-cask 'cyberduck'                      # Mount remote storage locations
+cask 'wezterm'                        # Rust terminal
 cask 'devtoys'                        # Dev tools/utilities for Mac
-cask 'diffmerge'                      # File comparison tool
-cask 'gitkraken'                      # Git client GUI
-cask 'iterm2'                         # Better terminalemulator
 cask 'visual-studio-code'             # Code editor - Default
 
 #############################################################
 # 4. MacOS Specific Stuff                                   #
 #############################################################
-
-# Mac OS Quick-Look Plugins
-cask 'qlmarkdown'     # QL for markdown files
-cask 'qlprettypatch'  # QL for patch / diff files
-cask 'qlstephen'      # QL for dev text files
-cask 'qlvideo'        # QL for video formats
-cask 'quicklook-csv'  # QL for tables in CSV format
-cask 'quicklook-json', args: { require_sha: false } # QL for JSON, with trees
-cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
 
 # Mac OS Mods, Imrovments, & Utilities
 cask 'alt-tab'            # Windows like alt-tab
@@ -176,6 +154,7 @@ cask 'hiddenbar'          # Hide / show annoying menubar icons
 cask 'keka'               # File archiver and extractor
 
 # Mac App Store Installs
+#cask 'cyberduck'                      # Mount remote storage locations
 mas 'Slack', id: 803453959
 mas 'Xcode', id: 497799835
 mas 'WhatsApp', id: 1147396723

@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
+# Inserts a blank line between shell prompts
+add_newline = true
 
 format = '$all$directory$character'
 
