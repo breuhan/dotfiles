@@ -21,19 +21,25 @@ else
 fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-# Oh my zsh settings
-zstyle ':omz:update' mode auto
-plugins=(git git-auto-fetch rsync zsh-autosuggestions zsh-syntax-highlighting)
-if [[ $HOSTNAME == "saturn-lin" ]]; then
-    plugins+=('archlinux')
+
+
+if [[ -f $ZSH/oh-my-zsh.sh ]]; then
+  # Oh my zsh settings
+  zstyle ':omz:update' mode auto
+  plugins=(git git-auto-fetch rsync zsh-autosuggestions zsh-syntax-highlighting)
+  source $ZSH/oh-my-zsh.sh
 fi
-source $ZSH/oh-my-zsh.sh
+
 
 ENABLE_CORRECTION="true"
 
-if [[ $HOSTNAME == "uk0123m" ]]; then
+if [[ $HOST == "uk0123m" ]]; then
   export PATH=$PATH:$HOME/.cargo/bin
   export PATH="$PATH:/opt/homebrew/opt/libpq/bin/"
+  export CARGO_TARGET_DIR=$HOME/.cargo/target
+elif [[ $HOST == "saturn-lin" ]]; then
+  export CARGO_TARGET_DIR=/media/sata_ssds/cargo/target
+  plugins+=('archlinux')
 fi
 
 eval "$(direnv hook zsh)"

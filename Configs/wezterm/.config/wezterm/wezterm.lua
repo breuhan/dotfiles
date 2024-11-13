@@ -6,10 +6,18 @@ local appearance = require 'appearance'
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+config.enable_scroll_bar = true
+config.scrollback_lines = 10000
+
 if appearance.is_dark() then
     config.color_scheme = 'Catppuccin Macchiato'
 else
     config.color_scheme = 'Catppuccin Latte'
+end
+
+if is_linux then
+  config.front_end = "WebGpu"
+  config.enable_wayland = true
 end
 
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
@@ -81,7 +89,7 @@ wezterm.on('update-status', function(window, _)
     window:set_right_status(wezterm.format(elements))
 end)
 
-config.leader = {key = 'a', mods = 'CTRL', timeout_milliseconds = 1000}
+config.leader = {key = 'q', mods = 'CTRL', timeout_milliseconds = 1000}
 config.keys = {
     {key = 'LeftArrow', mods = 'OPT', action = act.SendString '\x1bb'},
     {key = 'RightArrow', mods = 'OPT', action = act.SendString '\x1bf'}, {
