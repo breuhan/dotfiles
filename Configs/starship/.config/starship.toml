@@ -1,12 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = true
-
+add_newline = false
+command_timeout = 1000
 format = '$all$directory$character'
-
-[line_break]
-disabled = true
 
 [battery]
 disabled = true
@@ -59,6 +56,9 @@ disabled = true
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[nodejs]
+disabled = true
 
 [os]
 disabled = false # Disabled by default
