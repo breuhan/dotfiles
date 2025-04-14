@@ -8,9 +8,9 @@ set -e
 
 PLATFORM=$(uname)
 ARCH=$(uname -m)
+TUCKR_EXEC=$DOTFILES_DIR/bin/${ARCH}_${PLATFORM}/tuckr
 
-if [ -f $TUCKR_EXEC ];
-then
+if ! type "tuckr" > /dev/null; then
   echo Running precompiled tuckr: $TUCKR_EXEC
   TUCKR_EXEC=$DOTFILES_DIR/bin/${ARCH}_${PLATFORM,,}/tuckr
 else

@@ -1,8 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = false
-command_timeout = 1000
+add_newline = true
+command_timeout = 5000
+
 format = '$all$directory$character'
 
 [battery]
@@ -50,9 +51,6 @@ stashed = "≡"
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-[cmd_duration]
-disabled = true
-
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
@@ -61,23 +59,24 @@ style = "bright-black"
 disabled = true
 
 [os]
-disabled = false # Disabled by default
+disabled = false              # Disabled by default
+format = '[$symbol]($style) '
 
 [os.symbols]
-Arch = " "
-Linux = " "
-Macos = " "
+Arch = ""
+Linux = ""
+Macos = ""
 
 [rust]
-symbol = " "
+symbol = ""
 style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ($version) ]($style) '
 
 [time]
 disabled = false
-time_format = "%R"                                    # Hour:Minute Format
+time_format = "%R"                                      # Hour:Minute Format
 style = "bg:#1d2230"
-format = '[[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[ $time ](fg:#a0a9cb bg:#1d223000)]($style)'
 
 [sudo]
 symbol = "sudo "
