@@ -1,8 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM=/usr/share/zsh/
 
-set -o vi
-
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -23,6 +21,7 @@ echo "Loading custom zsh files"
 for f in ${ZDOTDIR:-~}/.zsh/custom/*.zsh(N); do source $f; done
 
 if [[ -f $ZSH/oh-my-zsh.sh ]]; then
+  export ENABLE_CORRECTION=false
   echo "Loading Oh my zsh"
   source $ZSH/oh-my-zsh.sh
 fi
