@@ -1,2 +1,5 @@
 bin/aarch64_linux/tuckr filter=lfs diff=lfs merge=lfs -text
 bin/x86_64_linux/tuckr filter=lfs diff=lfs merge=lfs -text
+*.secret filter=git-crypt diff=git-crypt
+secrets/ filter=git-crypt diff=git-crypt
+Configs/ssh/.ssh/ filter=git-crypt diff=git-crypt
